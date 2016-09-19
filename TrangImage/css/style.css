@@ -1,0 +1,49 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #E5E5E5;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	margin: 30px 0 10px 0;
+	color: #404040;
+	font-size: 24px;
+}
+
+img{
+	max-width: 100%px;
+	max-height: 300px;
+}
+#main-menu a{
+	font-size: 20px;
+	color: #737373;
+	text-decoration: none;
+}
+#main-menu a:hover,#main-menu a.active{
+	color: black;
+}
+
+#main-menu a.active{
+	font-weight: bold;
+}
+
+
+.wrap{
+	max-width: 1000px;
+	margin: auto;
+}
+.effect{
+	padding: 1px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+.effect img{
+	vertical-align: middle;
+	opacity: 1;
+}
+.effect:hover img{
+	opacity: 0.5;
+}

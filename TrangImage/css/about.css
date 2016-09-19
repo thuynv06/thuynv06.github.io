@@ -1,0 +1,9 @@
+
+.box{
+	float: left;
+	padding: 5px;
+	width: 33,333333%;
+	position: relative;	
+	border: 1px solid #dddddd;
+	border-top - width: 5px;
+}
