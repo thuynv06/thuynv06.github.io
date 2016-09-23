@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> BT JavaScript</title>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/about.css">
+		<script type="text/javascript" >
+			function bai1(a){
+				return a*a;
+			}
+			function bai2(a,b,c){
+				x=3*a + 2*b - c;
+				return bai1(x);
+			}
+			function bai3(x){
+				var string = x.substr(0,9) + "...";
+				return string;
+			}
+			function bai4(x){
+				var string = x.substr(0,1).toUpperCase();
+				var str2= x.substr(1,x.length);
+				var str=string+str2;
+				return str;
+			}
+			function bai5(){
+				var  a= [11,2,4,1,2,88,3,66,5];
+				a.sort(function(a, b){return a - b});
+				return a[0];
+			}
+			function bai6(){
+				var arr = new Array("Khoa", "Hiếu", "An", "Đoàn", "Quỳnh");
+				var ketqua=arr.sort();
+				document.write("Danh sách họ tên theo bảng chữ cái: "+ ketqua);
+			}
+		
+		</script>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+			// document.write("Chuỗi cắt: " + bai3("gdfsgdsfgsdfgaaaaaaaaaaaaaa"));
+			// document.write("Bài 4: "+ bai4("wellcome to Techmaster!"));
+			document.write("Số bé nhất mảng là: "+ bai5());
+			document.write("Bài 6: " + bai6());	
+			document.write("Bài7" + bai7() );
+			var teacher = {
+				  firstName: "Kim",
+				  lastName: "Dung",
+				  age: 30,
+				  say: function(){
+					
+
+				  }
+				}
+				var parent = {
+				  firstName: "Thuy",
+				  lastName: "Hu",
+				  age: 30,
+				  say: function(){
+				  	
+				}
+				var student = {
+				  firstName: "Thuy",
+				  lastName: "Hoang",
+				  age: 30,
+				  say: function(){				  	
+				  }
+				}
+				var aboutMe = function(){
+					alert("Xin Chào, tôi là " + aboutMe.firstName + " "+ aboutMe.lastName
+					+ "Năm nay tôi: "+ aboutMe.age +".");
+				}
+
+				student.say=aboutMe;
+				student.say();
+				
+		</script>
+
+
+	</body>
+</html>

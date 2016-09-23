@@ -66,7 +66,6 @@ h3{
 	border-top - width: 5px;
     animation: myfirst 5s infinite;
     animation-direction: alternate;
-
 }
 
 
@@ -75,6 +74,26 @@ img{
 	max-width: 100%;
 	max-height: 300px;
 }
+#main-menu {
+	text-align: center;
+	padding: 15px 0;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #dddddd;
+}
+#main-menu > a:first-child{
+	position: absolute;
+	padding:4px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	top:-54;
+	left: 77;
+}
+#main-menu > a:first-child >img {
+	max-width: 160px;
+	border-radius: 50%;
+}
+
+
 #main-menu a{
 	font-size: 20px;
 	color: #737373;
@@ -106,5 +125,12 @@ img{
 }
 .effect:hover img{
 	opacity: 0.5;
+}
+#chat{
+	width: 10px;
+	height: 10px;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
 }
 
