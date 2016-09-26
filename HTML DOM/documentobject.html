@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>
+			BT Document HTML DOm
+		</title> 
+		<script type="text/javascript">
+			function changeFontSize(x){
+				var str= x.toString() + "px"
+				document.getElementById("box").style.fontSize=str;
+			}
+			function increaseFontSize(paragraph){
+				var el = document.getElementById(paragraph);
+				var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+				var fontSize = parseFloat(style); 
+				el.style.fontSize = (fontSize + 1) + 'px';
+				
+			}
+			function decreaseFontSize(paragraph)
+			{
+				var el = document.getElementById(paragraph);
+				var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+				var fontSize = parseFloat(style); 
+				el.style.fontSize = (fontSize - 1) + 'px';
+
+			}
+			function changeColor(){
+				document.getElementById("p1").style.color="green";
+				document.getElementById("p2").style.color="yellow";
+				document.getElementById("p3").style.color="red";
+			}
+			function changeBgColor(color)
+			{
+				document.body.style.backgroundColor = "grey";
+			}
+			function copyContent(paragraph1,paragraph2){
+				 p1= document.getElementById(paragraph1);
+				p2= document.getElementById(paragraph2);
+				p1.innerText=p2.innerText;
+			}
+		</script>
+	</head>
+	<meta charset="utf-8">
+	<body>
+		<div id="swap">
+			<div>
+				<h2>Bài tập HTML DOMs</h2>
+			</div>
+			<div id="box">
+				<p id="p1">There are many variations on the punctuation and casing of the phrase. Variations include the presence or absence of the comma and exclamation mark, and the capitalization of the 'H', both the 'H' and the 'W', or neither. Some languages are forced to implement different forms, such as "HELLO WORLD!", on systems that support only capital letters, while many "hello world" programs</p>
+				<p id="p2"> Functional programming languages, like Lisp, ML and Haskell, tend to substitute a factorial program for Hello World, as functional programming emphasizes recursive techniques, whereas the original examples emphasize I/O, which violates the spirit of pure functional programming by producing side effects. Languages otherwise capable of Hello World (Assembly, C, VHDL) may also be used in embedded systems, where text output is either difficult (requiring additional components or communication with another computer) or nonexistent. For devices such as microcontrollers, field-pr</p>
+				<p id="p3"> many variations on the punctuation and casing of the phrase. Variations include the presence or absence of the comma and exclamation mark, and the capitalization of the 'H', both the 'H' and the 'W', or neither. Some languages are forced to implement different forms, 
+			</div>
+		</div>
+		
+	</body>
+</html>

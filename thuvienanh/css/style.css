@@ -23,6 +23,10 @@ h1{
 
 	animation:title 6s ease infinite;
 }
+.wrap{
+	max-width: 1000px;
+	margin: auto;
+}
 .box{
 	float: left;
 	padding: 5px;
@@ -37,6 +41,7 @@ img{
 	max-height: 300px;
 }
 #main-menu{
+
 	background-color: #ffffff;
 	padding: 15px 0;
 	border-bottom: 1px solid #dddddd;
@@ -67,10 +72,7 @@ img{
 }
 
 
-.wrap{
-	max-width: 1000px;
-	margin: auto;
-}
+
 .effect{
 	padding: 1px;
 	border: 1px solid #ddd;

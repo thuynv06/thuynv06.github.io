@@ -3,8 +3,7 @@
 	<head>
 		<title> BT JavaScript</title>
 		<meta charset="utf-8" >
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/about.css">
+	
 		<script type="text/javascript" >
 			function bai1(a){
 				return a*a;
@@ -23,60 +22,67 @@
 				var str=string+str2;
 				return str;
 			}
-			function bai5(){
-				var  a= [11,2,4,1,2,88,3,66,5];
+			function bai5(a){
 				a.sort(function(a, b){return a - b});
 				return a[0];
 			}
-			function bai6(){
-				var arr = new Array("Khoa", "Hiếu", "An", "Đoàn", "Quỳnh");
-				var ketqua=arr.sort();
-				document.write("Danh sách họ tên theo bảng chữ cái: "+ ketqua);
+			function bai6(str){
+				var ketqua=str.sort();
+				return ketqua;
+			
 			}
-		
-		</script>
-
-	</head>
-	<body>
-		<script type="text/javascript">
-			// document.write("Chuỗi cắt: " + bai3("gdfsgdsfgsdfgaaaaaaaaaaaaaa"));
-			// document.write("Bài 4: "+ bai4("wellcome to Techmaster!"));
-			document.write("Số bé nhất mảng là: "+ bai5());
-			document.write("Bài 6: " + bai6());	
-			document.write("Bài7" + bai7() );
-			var teacher = {
+			function bai7(){
+				var teacher = {
 				  firstName: "Kim",
 				  lastName: "Dung",
 				  age: 30,
 				  say: function(){
-					
-
 				  }
 				}
-				var parent = {
-				  firstName: "Thuy",
-				  lastName: "Hu",
-				  age: 30,
-				  say: function(){
-				  	
+			var parent = {	
+			  firstName: "Thuy",
+			  lastName: "Hu",
+			  age: 30,a
+			  say: function(){
+			  		
 				}
-				var student = {
-				  firstName: "Thuy",
-				  lastName: "Hoang",
-				  age: 30,
-				  say: function(){				  	
-				  }
-				}
-				var aboutMe = function(){
-					alert("Xin Chào, tôi là " + aboutMe.firstName + " "+ aboutMe.lastName
-					+ "Năm nay tôi: "+ aboutMe.age +".");
-				}
+			}
+			var student = {
+			  firstName: "Thuy",
+			  lastName: "Hoang",
+			  age: 30,
+			  say: function(){
+			  		
+			  }
+			}
 
-				student.say=aboutMe;
-				student.say();
+			var aboutMe = function(){
+				document.write("Xin chào tôi là; " + this.firstName + " " + this.lastName + ".Năm nay tôi: " + this.age+ "tuổi !");
+			}
+			student.say = aboutMe;
+			student.say();
+			return  "";
+			
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<pre>
+		<script type="text/javascript">
+			document.write("Bài 1:" + bai1(4)+"\n");
+			document.write("Bài 2:" + bai2(4,2,1)+"\n");
+			document.write("Bài 3 : " + bai3("gdfsgdsfgsdfgaaaaaaaaaaaaaafdsghsdfhdswqdasdasfdfhfhaeadfdfdgafwewtryhbvahjd")+"\n");
+			document.write("Bài 4: "+ bai4("wellcome to Techmaster!")+"\n");
+			document.write("Bài 5 - Số bé nhất mảng là: "+ bai5([11,2,4,1,2,88,3,66,5,6,4,10,0,34])+"\n");
+			document.write("Bài 6: ");	
+			document.write(bai6(["Khoa", "Hiếu", "An", "Đoàn", "Quỳnh","Kiên","Phúc","Trí"])+ "\n");	
+			document.write("Bài 7: ");	
+			document.write( bai7()+"\n");
 				
 		</script>
 
-
+		</pre>
 	</body>
 </html>

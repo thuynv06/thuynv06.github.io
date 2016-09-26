@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> BT JavaScript</title>
+		<meta charset="utf-8" >
+	
+		<script type="text/javascript" >
+			function bai1(n){
+				var s=1;
+				for (i=1;i<=n;i++){
+					s*=i;
+				}
+				return s;
+			}
+			function bai2(s){
+				var str="";
+				for (var i = s.length - 1; i >= 0; i--) {
+					str=str.concat(s.charAt(i));
+				}
+				return str;
+
+			}
+			function duplicate(s){
+				var str="";
+				for ( i=0; i<10 ;i++){
+					str=str.concat(s);
+					if (i<9){
+						str=str.concat("-")
+					}
+					
+				}
+				return str;
+
+			}
+			function bai4(s){
+				s.sort();
+				for ( i=1; i <=s.length ;i++){
+					document.write( i + ": " + s[i-1] +"<br>" );
+				}
+				return "";
+			}
+			function bai5(num){
+				for ( i=0; i <num.length ;i++){
+					num[i]*=2;
+				}
+				return num;
+			}
+			function bai6(num){
+				for ( i=0; i <num.length ;i++){
+					num[i]=num[i]%2;
+				}
+				return num;
+			}
+
+
+		</script>
+
+	</head>
+	<body>
+		<pre>
+		<script type="text/javascript">
+			document.write("Bài 1:" + bai1(5) + "\n");
+			document.write("Bài 2:" + bai2("ihaha") + "\n");
+			document.write("Bài 3:" + duplicate("123") + "\n" );
+			document.write("Bài 4:" + "\n"  );
+			document.write(bai4(["Khoa", "Hiếu", "An", "Đoàn", "Quỳnh","Kiên","Phúc","Trí"])+ "\n");
+			document.write("Bài 5:" + "\n"  );
+			var listNum = bai5([11,2,4,1,2,88,3,66,5,6,4,10,0,34]);
+			for ( i=0; i <listNum.length ;i++){
+					document.write(listNum[i]+ " " );
+				}
+			document.write("\n" + "Bài 6:" + "\n"  );
+			var daySoDu = bai6([11,2,4,1,2,88,3,66,5,6,4,10,0,34]);
+			for ( i=0; i <daySoDu.length ;i++){
+					document.write(daySoDu[i]+ " " );
+				}
+		</script>
+
+		</pre>
+	</body>
+</html>

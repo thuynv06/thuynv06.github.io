@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<title>
+			BT Document HTML Dom
+		</title> 
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+		<script type="text/javascript">
+					</script>
+	</head>
+	<body>
+		<div id="swap">
+			<div>
+				<h2>Caculator</h2>
+			</div>
+			<div id="main-content">
+					<div>
+						<input class="input" type="text" id="txtShow" value="0."/>
+					</div>
+					<br>
+					<div class="box">
+						<div><button class="button" onclick="binhphuong()">x<sup>2</sup></button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="giaithua()">n!</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="canbac2()">√</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="clean()">C</button></div>
+					</div>
+				
+					<br>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">7</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">8</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">9</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">/</button></div>
+					</div>
+				
+					<br>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">4</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">5</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">6</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">*</button></div>
+					</div>	
+					<br>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">1</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">2</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">3</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">-</button></div>
+					</div>
+					<br>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">.</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">0</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="result()">=</button></div>
+					</div>
+					<div class="box">
+						<div><button class="button" onclick="press(this)">+</button></div>
+					</div>
+
+			</div>
+		</div>
+		<script scr="js/script.js"></script>
+		<script>
+			var s=0;
+			function press(button){
+				var x= button.innerHTML;
+				var tam= document.getElementById("txtShow").value;
+				if( tam=='0.'){
+					tam="";
+				}
+				if ( isNaN(x)){
+					var show=tam + " " + x + " ";
+
+				}else{
+					var show=tam + x;
+				}
+				document.getElementById("txtShow").value=show;
+				// document.getElementById("txtShow1").value=s;
+
+			}
+			function result(){
+				var arr= document.getElementById("txtShow").value;
+				var s= eval(arr);
+				document.getElementById("txtShow").value=s;
+			}
+			function giaithua(){
+				var n= document.getElementById("txtShow").value;
+				n=parseFloat(n);
+				console.log(n);
+				var s=1;
+				for (i=1;i<=n;i++){
+					s*=i;
+				}
+				console.log(s);
+				var text = s + "!";
+				document.getElementById("txtShow").value=n+"!="+s;
+			}
+			function binhphuong(){
+				var n= document.getElementById("txtShow").value;
+				n=parseFloat(n);
+				n= Math.pow(n,2);
+				document.getElementById("txtShow").value=n;
+
+			}
+			function clean(){
+				document.getElementById("txtShow").value="0.";
+			}
+			function canbac2(){
+				var n= document.getElementById("txtShow").value;
+				n=parseFloat(n);
+				var s= Math.sqrt(n);
+				document.getElementById("txtShow").value="√"+n+"="+ s ;
+
+			}
+		</script>
+		
+	</body>
+</html>

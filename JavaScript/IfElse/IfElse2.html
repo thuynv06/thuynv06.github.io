@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> BT JavaScript</title>
+		<meta charset="utf-8" >
+		<style type="text/css">
+			p{
+				font-size: 16px;
+				color: green;
+			}
+			h5{
+				font-size: 16px;
+				color: red;
+			}
+		</style>
+	
+		<script type="text/javascript" >
+			function checkMua(month){
+				if (month >=1 && month <=3){
+					return "Mùa Xuân";
+				}else{
+				if(month <=6){
+					return "mùa hè";
+					}else{
+						if(month <= 9){
+							return "mùa thu"
+						}
+						else{
+							return "mùa đông";
+						}
+					}
+				}
+			}
+
+
+			function checkString(str){
+				if (typeof str== 'number'){
+					str= str.toString();
+				}
+				if ( str.length <=9){
+					return str;
+				}else
+				{
+					var string = str.substr(0,9) + "...";
+					return string;
+				}
+			}
+			function checkPoint(x){
+				if ( x>=0 && x<=3.9){
+					return "F";
+				}else{
+					if(x<=5.4){
+						return "D";
+					}else{
+						if(x<=6.9){
+							return "C";
+						}else{
+							if (x<=8.4){
+								return "B";
+							}else{
+								return "A";
+							}
+						}
+					}
+				}
+			}
+
+			function translate(maQuocGia){
+					switch (maQuocGia){
+						case "polish":
+							return "Czesc!";
+							break;
+						case "china":
+							return "Ní hao!";
+							break;
+						case "german":
+							return "Hallo";
+							break;
+						case "Italian":
+							return "Ciao!"
+							break;
+						default:
+							return "Xin Chào!";
+							break;
+					}
+				}
+			function checkTrue(b){
+				for(i=0; i<b.length;i++){
+					if (b[i] == "true"){
+						return i;
+						break;
+					}
+				}
+			}
+			function bai6(){
+				var i=1;
+				while ( i<=100){
+					if (i %2==0){
+						document.write("<p>" + i + "</p>");
+					}else{
+						document.write("<h5>"+ i+ "</h5>");
+					}
+					i++;
+				}
+			}
+	
+		</script>
+		
+
+	</head>
+	<body>
+		<pre>
+		<script type="text/javascript">
+			document.write("Bài tập điều kiện rẽ nhánh phần 2" + "\n" );
+			document.write("Bài 1:" + "\n" );
+			var now = new Date();   // Lấy thời gian hiện tại
+			var date = now.getDate();   // Lấy ngày từ thời gian hiện tại
+			var month = now.getMonth() + 1;   // Lấy tháng từ thời gian hiện tại. Do tháng trong javascript tính từ 0 - 11 nên phải +1
+			var year = now.getFullYear(); 
+			document.write(now + "\n" + "Ngày "+ date +" - tháng "+ month + " - năm "+ year);
+			document.write(" " + checkMua(month));
+			document.write( "\n" + "Bài 2:" +"\n" );
+			document.write(checkString(12332425346));
+			document.write( "\n" + "Bài 3:" +"\n" );
+			document.write(checkPoint(7.0));
+			var ma="german";
+			document.write( "\n" + "Bài 4: Dịch từ 'hello' sang tiếng " + ma +" : \n" );
+			document.write(translate(ma));
+			document.write( "\n" + "Bài 5: Vị trí xuất hiện 'TRUE' lần đầu tiên trong mảng: " +"\n" );
+			var b1=["false","false","false","false","true","true","false"];
+			document.write(checkTrue(b1));
+			document.write( "\n" + "Bài 6:");
+			bai6();
+		
+		</script>
+
+		</pre>
+	</body>
+</html>

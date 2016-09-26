@@ -1,0 +1,24 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	overflow-y:scroll;
+}
+h1{
+	margin: 30px;
+	text-transform: uppercase;
+	font-size: 35px;
+}
+.wrap{
+	position: relative;
+	margin: auto;
+}
+.content{
+	position: relative;
+	padding: 10px;
+}
+.card{
+	position: relative;
+}

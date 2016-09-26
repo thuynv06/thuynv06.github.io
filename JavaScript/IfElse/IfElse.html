@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> BT JavaScript</title>
+		<meta charset="utf-8" >
+	
+		<script type="text/javascript" >
+			function bai1(a,b){
+				if (a >b)
+				{
+					return a;
+				} else
+					return b;
+			}
+			function bai2(n){
+				
+				if (typeof n== 'number' && n > 0 ){
+						var s=1;
+						for (i=1;i<=n;i++){
+						s*=i;
+					}
+				} else {
+					document.write("Lỗi truyền tham số, " );
+					return "Không phải số nguyên dương ";
+				}
+				return s;
+				
+			}
+			function bai3(a){
+				var arr=[]
+				for(i=0;i<a.length;i++){
+					if ( a[i]%2==0){
+						arr.push(a[i]);
+					}
+				}
+				arr.sort(function(a, b){return b - a});
+				return arr;
+			}
+			var	user = {
+  				username: "username",
+			  	password: "secret",
+			  	confirm: "secret"
+			}
+			function checkUserName(user){
+				if ( user.username.length > 0 && user.username.length <=20 )
+				{
+					return true;
+				}else{
+					return false;
+				}
+			}
+			function checkPassWord(user){
+				if ( user.password.length >=6  && user.password.length <=32 )
+				{
+					return true;
+				}else{
+					return false;
+				}
+			}
+			function checkConfirm(user){
+				var val = true;
+				if( user.password.length != user.confirm.length){
+					return false;
+				}
+				else{
+					for (i=0; i < user.password.length; i++) {
+						if( user.password[i] != user.confirm[i] )
+						{
+							val=false;
+						}
+					};
+				}
+				return val;
+			}
+
+
+		</script>
+
+	</head>
+	<body>
+		<pre>
+		<script type="text/javascript">
+			document.write("Bài tập điều kiện rẽ nhánh phần 1" + "\n" );
+			document.write("Bài 1: Giá  Trị Lớn Nhất Là:" + bai1(3,5) + "\n");
+			document.write("Bài 2: Tính Giai Thừa:");
+			document.write(bai2(7)+ "\n");
+			document.write("Bài 3: Tìm dãy số chẵn và sắp xếp giảm dần "+ "\n");
+			var arr1= bai3([11,2,4,1,2,88,3,66,5,6,4,10,0,34]);
+			for (i=0;i<arr1.length;i++){
+				document.write( arr1[i] + " " );
+			};
+
+			document.write("\n"+ "Bài 4: Kiểm tra xác thực thông tin nhập vào: " + "\n");
+			 var user1 = {
+  				username: "techmaster",
+			  	password: "123546",
+			  	confirm: "123456"
+			}
+			if (checkUserName(user1) && checkPassWord(user1) && checkConfirm(user1)){
+				document.write("Thông tin người dùng hợp lệ");
+			}else{
+				document.write("Thông tin người ko hợp lệ");
+			}
+			
+
+
+				
+		</script>
+
+		</pre>
+	</body>
+</html>
