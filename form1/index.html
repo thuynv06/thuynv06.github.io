@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Form đăng kí</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">	
+	</head>
+	<body>
+		<div class="wrap">
+			<h1> Đăng kí thành viên </h1>
+			<form action="result.html" id="form-register">
+				
+						<label class="label">Họ tên:</label><br>
+						<input type="text" id="name" name="name" placeholder="Họ Tên" />
+						<span class="error"></span><br/>
+
+						<label class="label">Email:</label><br>
+						<input type="email" name="email" placeholder="@gmail.com" id="email"/>
+						<span class="error"></span><br/>
+
+						<label class="label">Địa chỉ:</label><br>
+						<input type="text" id="diachi" name="diachi" placeholder="hà nội"/>
+						<span class="error"></span><br>
+
+						<label class="label">Số điện thoại:</label><br>
+						<input type="num" id="sodienthoai" name="sodienthoai" required="required"/>
+
+
+						<label class="label">Facebook:</label><br>
+						<input type="text" id="facebook" name="facebook" /> <br>
+						<span class="error"></span><br>
+
+						<label class="label">Ngày sinh: </label><br>
+						<input type="date" id="bday" name="bday"><br>
+					
+
+						<label class="label">Giới Tính:</label><br>
+						<input type="radio" name="gender" id="male"/> <label for="male">Nam </label>
+						<input type="radio" name="gender"/> <label for="male">Nữ</label><br>
+						<label class="label"> Mật khẩu:</label>
+						<input type="password" id="psw" name="Mật Khẩu" placeholder="mật khẩu"/>
+						<span class="error"></span><br/>
+						<input  type="submit" value="Đăng Kí">
+					</form>   
+			
+		</div>
+		 <script src="jquery-3.1.1.slim.min.js"></script>
+		 <script>
+		 	$('#form-register').on('submit',function(){
+		 		var isValid=true;
+		 		if($('#name').val().trim()==''){
+		 			$('#name').next('span').text('error!');
+		 			isValid=false;
+		 		}else{
+		 			$('#name').next('span').text('');
+		 		}
+		 		if($('#email').val().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)==null){
+		 			$('#email').next('span').text('error!');
+		 			isValid=false;
+		 		}else{
+		 			$('#email').next('span').text('');
+		 		}
+		 		if($('#diachi').val().trim()==''){
+		 			$('#diachi').next('span').text('error!');
+		 			isValid=false;
+		 		}else{
+		 			$('#diachi').next('span').text('');
+		 		}
+
+		 		if($('#facebook').val().trim()==''){
+		 			$('#facebook').next('span').text('is empty!');
+		 			isValid=false;
+		 		}else{
+		 			$('#facebook').next('span').text('');
+		 		}
+
+		 		if($('#psw').val().trim()=='' || $('#psw').val().length < 6){
+		 			$('#psw').next('span').text('mật khẩu phải dài hơn 6 ký tự');
+		 			// console.log("mat khau qua ngan");
+		 			isValid=false;
+		 		}else{
+		 			$('#psw').next('span').text('');
+		 		}
+
+		 		return isValid;
+		 	});
+
+		 </script>
+		
+	</body>
+
+</html>
