@@ -11,6 +11,11 @@ h1{
 	text-transform: uppercase;
 	font-size: 35px;
 }
+img{
+	width: 200px;
+	height: 300px;
+
+}
 .wrap{
 	position: relative;
 	margin: auto;
@@ -19,6 +24,29 @@ h1{
 	position: relative;
 	padding: 10px;
 }
+.grid{
+	float:  left;
+	padding: 10px;
+}
 .card{
 	position: relative;
+}
+.card .back{
+	transform: rotateY(180deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card:active .back{
+	transform :rotateY(0deg);
+	
+}
+.card:active .front{
+	transform :rotateY(180deg);
+	
+}
+.card .back,.card .front {
+	transition: all 0.5s;
+	backface-visibility:hidden;  
 }

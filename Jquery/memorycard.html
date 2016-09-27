@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> BT Tạo trang Image</title>
+		<title> Memory Card</title>
 		<meta charset="utf-8" >
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	
@@ -9,23 +9,76 @@
 	<body>
 		<div class="wrap">
 			<div class="content">
-				<div class="grid">
-					<div class="crad">
+				<div class="	grid">
+					<div class="card">
 						<div class="front">
-
-
+							<img src="Images/up.jpg">
+						</div>
+						<div  class="back">
+							<img src="Images/ngua.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="grid">
+					<div class="card">
+						<div class="front">
+							<img src="Images/up.jpg">
 						</div>
 						<div class="back">
-							
-
+							<img src="Images/ngua.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="grid">
+					<div class="card" >
+						<div class="front">
+							<img src="Images/up.jpg">
+						</div>
+						<div class="back">
+							<img src="Images/ngua.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="grid">
+					<div class="card">
+						<div class="front">
+							<img src="Images/up.jpg">
+						</div>
+						<div class="back">
+							<img src="Images/ngua.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="grid">
+					<div class="card">
+						<div class="front">
+							<img src="Images/up.jpg">
+						</div>
+						<div class="back">
+							<img src="Images/ngua.jpg">
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-			
-		
-		
+		 <script src="jquery-3.1.1.slim.min.js"></script>
+		 <script >
+			$(document).ready(function(){
+
+			    $(".card").on({
+	    			mouseenter: function(){
+				        $(this).css("background-color", "lightblue");
+	   			 		
+	    			}, 
+				    mouseleave: function(){
+				        $(this).css("background-color", "lightblue");
+				    }, 
+				    click: function(){
+				       $("#back").css("background-color", "yellow");
+				    } 
+				});
+			});
+		</script>
 	</body>
 </html>

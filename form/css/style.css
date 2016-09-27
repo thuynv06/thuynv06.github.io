@@ -1,0 +1,34 @@
+*{
+	box-sizing:border-box;
+}
+.body{
+	margin-left: 100px;
+}
+.swrap{
+	position: relative;
+	margin: auto;
+	background-color: grey;
+}
+.h1{
+	color: blue;
+	text-align: center;
+	font-size: 24px;
+}
+.label{
+	text-align: left;
+	font-weight: bold;
+
+}
+table, td, th {
+    border: 0.5px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+th, td {
+    padding: 15px;
+}
