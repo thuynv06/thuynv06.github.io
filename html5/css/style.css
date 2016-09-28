@@ -1,0 +1,32 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	margin: auto;
+	background-color: #DDDDDD;
+}
+#page{
+	width: 100%;
+	margin-left: 200px;
+}
+#content{
+	width: 80%;
+}
+#aricle{
+	float: left;
+	width: 70%;
+}
+#aside{
+	float: right;
+	width: 30%;
+}
+#footer{
+	width: 100%;
+	float: left;
+
+}
+.aslist{
+	text-decoration: bold;
+	color: blue;
+	font-size: 32px;
+}

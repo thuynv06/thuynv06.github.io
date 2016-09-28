@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head><title>HTML5 layout</title></head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<body>
+		<div id="page">
+			<h1>Danh Sách Học Viên</h1>
+			<div id="content">
+				<table id="student">
+					<thead>
+						<tr>
+							<th>Avatar</th>
+							<th id="hoten">Họ Tên <i id="up" class="fa fa-sort-asc" aria-hidden="true"></i><i id="down" class="fa fa-sort-desc" aria-hidden="true"></th>
+							
+							<th> Giới Tính</th>
+							<th> Email</th>
+							<th>Số Điện Thoại</th>
+						</tr>
+					</thead>
+					
+				</table>	
+			</div>
+			
+			
+			<footer id="footer">
+				<p>Posted by: Thuynv</p>
+				<p>Contact information: <a href="thuynv06@.com">
+  				thuynv06@gmail.com</a>.</p>
+			</footer>
+
+		</div>
+	<script src="jquery-3.1.1.slim.min.js"></script>
+	<script>
+		var s={avatar:"",name:"",gender:"",email:"",numMobile:""};
+
+		var s1={avatar:"Images/1.jpg",name:"Nguyễn Văn Vinh",gender:"Nam",email:"vinhnv1@gmail.com",numMobile:"012345648"};
+		var s2={avatar:"Images/2.jpg",name:"Nguyễn Văn Tiến",gender:"Nam",email:"tien123@gmail.com",numMobile:"012345648"};
+		var s3={avatar:"Images/3.jpg",name:"Mai Thanh Nga",gender:"Nữ",email:"maithanhnga@gmail.com",numMobile:"012345648"};
+		var s4={avatar:"Images/4.jpg",name:"Bùi Thiện Hải",gender:"Nam",email:"buithienhai@gmail.com",numMobile:"012345648"};
+		var s5={avatar:"Images/5.jpg",name:"Phạm Hồng Đức",gender:"Nam",email:"phamhongduc@gmail.com",numMobile:"012345648"};
+		var s6={avatar:"Images/6.jpg",name:"Lê Việt Hưng",gender:"Nam",email:"leviethung@gmail.com",numMobile:"012345648"};
+		var s7={avatar:"Images/7.jpg",name:"Nguyễn Thùy Linh",gender:"Nữ",email:"nguyenthuylinh@gmail.com",numMobile:"012345648"};
+		var s8={avatar:"Images/8.jpg",name:"Đỗ Mỹ Linh",gender:"Nữ",email:"domylinh@gmail.com",numMobile:"096666666"};									
+		var s9={avatar:"Images/9.jpg",name:"Nguyễn Văn Đạt",gender:"Nam",email:"nguyenvandat@gmail.com",numMobile:"098888888"};
+		var s10={avatar:"Images/10.jpg",name:"Nguyễn Đức Huy",gender:"Nam",email:"duchuy@gmail.com",numMobile:"0977777777"};	
+		var students=[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10];
+		for (i=0;i<students.length;i++){
+					// console.log(students[i]);
+						$('#student').append(
+						'<tbody><tr><td><img src="'+ students[i].avatar + '"></td>;<td>'+ students[i].name + '</td>;<td>'+ students[i].gender + '</td>;<td>'+ students[i].email + '</td>;<td>'+ students[i].numMobile + '</td>;</tr></tbody>');
+				}
+		function addStu(){
+				for (i=0;i<students.length;i++){
+					// console.log(students[i]);
+						$('#student').append(
+						'<tbody><tr><td><img src="'+ students[i].avatar + '"></td>;<td>'+ students[i].name + '</td>;<td>'+ students[i].gender + '</td>;<td>'+ students[i].email + '</td>;<td>'+ students[i].numMobile + '</td>;</tr></tbody>');
+				}
+
+		}
+		function compareAZ(a,b) {
+		  if (a.name < b.name)
+		    return -1;
+		  if (a.name > b.name)
+		    return 1;
+		  return 0;
+		}
+		$('#up').click(function(){
+			students.sort(compareAZ);
+			$('#student > tbody').remove();
+			addStu();
+	
+		});
+		function compareZA(a,b) {
+		  if (a.name > b.name)
+		    return -1;
+		  if (a.name < b.name)
+		    return 1;
+		  return 0;
+		}
+		
+		$('#down').click(function(){
+			students.sort(compareZA);
+			$('#student > tbody').remove();
+			addStu();
+			
+		});
+		
+	</script>
+	</body>
+
+</html>
