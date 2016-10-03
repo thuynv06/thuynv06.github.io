@@ -103,12 +103,23 @@
 					i++;
 				}
 			}
-	
+			function print(n){
+				var str='';
+				for(i=0; i<n;i++){
+					for(j=0; j<n;j++){
+					 	str+='* '
+						document.write("*");
+					}
+					document.writeln("<br>");
+					 
+				}
+			}
 		</script>
 		
 
 	</head>
 	<body>
+		
 		<pre>
 		<script type="text/javascript">
 			document.write("Bài tập điều kiện rẽ nhánh phần 2" + "\n" );
@@ -128,9 +139,13 @@
 			document.write(translate(ma));
 			document.write( "\n" + "Bài 5: Vị trí xuất hiện 'TRUE' lần đầu tiên trong mảng: " +"\n" );
 			var b1=["false","false","false","false","true","true","false"];
+			document.write( "\n");
+			document.write( "\n");
+
 			document.write(checkTrue(b1));
 			document.write( "\n" + "Bài 6:");
 			bai6();
+			
 		
 		</script>
 
