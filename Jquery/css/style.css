@@ -13,8 +13,8 @@ h1{
 	font-size: 35px;
 }
 img{
-	width: 200px;
-	height: 300px;
+	width: 100px;
+	height: 150px;
 }
 .wrap{
 	position: relative;
@@ -65,6 +65,12 @@ img{
 .card .back,.card .front {
 	transition: all 0.5s;
 	backface-visibility:hidden;  
+}
+.flipped .back{
+	transform: rotateY(0deg);
+}
+.flipped .front{
+	transform: rotateY(180deg);
 }
 .snow{
 	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
