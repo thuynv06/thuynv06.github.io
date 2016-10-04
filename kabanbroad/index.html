@@ -5,6 +5,7 @@
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	      <!--Import materialize.css-->
       	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	      <!--Let browser know website is optimized for mobile-->
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -28,7 +29,7 @@
 					<div class="card">
 						<h5>TO DO (4)</h5>
 						<div class="collection sorted-list">
-					        <a href="#!" class="collection-item"> learn HTML <i class="material-icons">delete</i></a>
+					        <div href="#!" class="collection-item"> learn HTML <span class="badge" onclick="app.deleteJob()"><i class="material-icons">delete</i></span></div>
 					        <a href="#!" class="collection-item active">learn CSS <i class="material-icons">delete</i></a>
 					        <a href="#!" class="collection-item">learn JavaScript<i class="material-icons">delete</i></a>
 					        <a href="#!" class="collection-item">learn NodeJS<i class="material-icons">delete</i></a>
@@ -92,7 +93,16 @@
 			      connectWith: ".sorted-list"
 			    });
 			  } );
+      		addJobToList: function	(type,jobName){
+      			var item ='<div href="#!" class="collection-item">' + jobName +'<span class="badge" onclick="appdeleteJob(this)"><i class="material-icons">delete</i>';
 
+      			$('#' + type).append(item);
+
+      		},
+      		deleteJob :function(span){
+      			var item=$(span).parent();
+      			item.remove();
+      		}
       	</script>
 	</body>
 </html>
