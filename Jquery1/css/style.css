@@ -1,0 +1,68 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+	overflow-y:scroll;
+	background-color: rgb(82, 70, 70);
+}
+h1{
+	margin: 30px;
+	text-transform: uppercase;
+	font-size: 35px;
+}
+img{
+	width: 200px;
+	height: 300px;
+}
+.wrap{
+	position: relative;
+	margin: auto;
+}
+.content{
+	position: relative;
+	padding: 10px;
+}
+.grid{
+	float:  left;
+	padding: 20px;
+}
+.card{
+
+	position: relative;
+}
+.card .back{
+	transform: rotateY(180deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.card .front img {
+	border-radius: 2%;
+	margin-left: 10px;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.card .back img {
+	margin-left: 10px;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.card .back:hover img {
+	margin-left: 0;
+}
+.card .front:hover img {
+	margin-left: 0;
+}
+
+.card .back,.card .front {
+	transition: all 0.5s;
+	backface-visibility:hidden;  
+}
+	

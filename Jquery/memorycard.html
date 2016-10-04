@@ -6,78 +6,86 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	</head>
-	<body>
-		<div class="wrap">
+	<body >
+		<audio id="bg-music">
+		    <source src="a.MP3" type="audio/mpeg">
+		</audio>
+		<div class="snow">
+	
 			<div class="content">
-				<div class="	grid">
-					<div class="card">
-						<div class="front">
-							<img src="Images/up.jpg">
-						</div>
-						<div  class="back">
-							<img src="Images/ngua.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="card">
-						<div class="front">
-							<img src="Images/up.jpg">
-						</div>
-						<div class="back">
-							<img src="Images/ngua.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="card" >
-						<div class="front">
-							<img src="Images/up.jpg">
-						</div>
-						<div class="back">
-							<img src="Images/ngua.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="card">
-						<div class="front">
-							<img src="Images/up.jpg">
-						</div>
-						<div class="back">
-							<img src="Images/ngua.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="grid">
-					<div class="card">
-						<div class="front">
-							<img src="Images/up.jpg">
-						</div>
-						<div class="back">
-							<img src="Images/ngua.jpg">
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 		 <script src="jquery-3.1.1.slim.min.js"></script>
 		 <script >
-			$(document).ready(function(){
+			document.getElementById('bg-music').play();
 
-			    $("#car").on({
-	    			mouseenter: function(){
-	   			 		
-	    			}, 
-				    mouseleave: function(){
-				    }, 
-				    click: function(){
-				      	$('front').css{}
+		 	var cards=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10'];
+		 	var current=null;
+		 	function shuffle(array){
+		 		var currentIndex = array.length,temporaryValue,randomIndex;
+		 		while(0!==currentIndex){
+		 			randomIndex = Math.floor(Math.random()*currentIndex);
+		 			currentIndex -=1;
+		 			temporaryValue = array[currentIndex];
+		 			array[currentIndex]=array[randomIndex];
+		 			array[randomIndex] = temporaryValue;
+		 		}
 
-				       }
-				    } 
-				});
+		 		return array;
+		 	}
+		 	function flipped(a){
+		 		$(a).children('.back').css({"transform": "rotateY(0deg)"});
+		 		$(a).children('.front').css({"transform": "rotateY(180deg)"});
+		 	}
+	 		function flippback(a){
+		 		$(a).children('.back').css({"transform": "rotateY(180deg)"});
+		 		$(a).children('.front').css({"transform": "rotateY(0deg)"});
+		 	}
+		 	function flip (card){
+		 		var a=card;
+		 		console.log(a);
+		 		
+		 		flipped(a);
+		 		// $(a).children('.back').css({"transform": "rotateY(0deg)"});
+		 		// $(a).children('.front').css({"transform": "rotateY(180deg)"});
+
+
+		 		 if(!current){
+		 		 	current = $(card);
+
+		 		 }else{
+		 		 	if(current.attr('data-name') != $(card).attr('data-name')){
+		 		 		console.log("khac");
+		 		 		setTimeout(function(){
+		 		 			flippback(current);
+			 		 		flippback(card);
+			 		 		current=null;
+		 		 		},500);
+		 		 		
+		 		 	}else{
+		 		 		setTimeout(function(){
+		 		 			$(card).css('opacity','0');
+		 		 			current.css('opacity','0');
+		 		 			console.log("giong");
+		 		 			current=null;
+		 		 		},200);
+		 		 		
+		 		 	}
+		 		 }
+		 	}
+
+			$(function() {
+				cards = cards.concat(cards);
+				cards = shuffle(cards);
+
+				var html='';
+
+				for(var i=0;i<cards.length;i++){
+					html+='<div class="grid">' + '<div class="card" data-name="'+ cards[i] +'" onclick="flip(this)">'
+					+'<div class="front"><img src="Images/up.jpg"/> </div>'+
+					'<div class="back"><img src="Images/'+cards[i]+'.jpg"/> </div>'+'</div></div>';
+				};
+				$('.content').html(html);
 			});
 		</script>
 	</body>
