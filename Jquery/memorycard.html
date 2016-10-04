@@ -16,11 +16,20 @@
 			</div>
 		</div>
 		 <script src="jquery-3.1.1.slim.min.js"></script>
+		 <style type="text/css">
+			.flipped .back{
+				transform: rotateY(0deg);
+			}
+			.flipped .front{
+				transform: rotateY(180deg);
+			}
+		 </style>
 		 <script >
 			document.getElementById('bg-music').play();
 
 		 	var cards=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10'];
 		 	var current=null;
+		 
 		 
 		 	function shuffle(array){
 		 		var currentIndex = array.length,temporaryValue,randomIndex;
@@ -43,14 +52,10 @@
 		 		$(a).children('.front').css({"transform": "rotateY(0deg)"});
 		 	}
 		 	function flip (card){
-		 		var a=card;
-		 		console.log(a);
 		 		
-		 		flipped(a);
-		 		// $(a).children('.back').css({"transform": "rotateY(0deg)"});
-		 		// $(a).children('.front').css({"transform": "rotateY(180deg)"});
-
-
+		 		$(card).toggleClass('flipped');
+		 		$(card).css('pointer-events', 'none');
+		 		
 		 		 if(!current){
 		 		 	current = $(card);
 
@@ -58,8 +63,10 @@
 		 		 	if(current.attr('data-name') != $(card).attr('data-name')){
 		 		 		console.log("khac");
 		 		 		setTimeout(function(){
-		 		 			flippback(current);
-			 		 		flippback(card);
+		 		 			$(current).toggleClass('flipped');
+		 		 			$(card).toggleClass('flipped');
+		 		 			$(current).css('pointer-events', 'auto');
+		 		 			$(card).css('pointer-events', 'auto');
 			 		 		current=null;
 		 		 		},500);
 		 		 		
@@ -69,8 +76,8 @@
 		 		 			current.css('opacity','0');
 		 		 			console.log("giong");
 		 		 			current=null;
-		 		 		
-		 		 		},200);
+		 		 			
+		 		 		},300);
 		 		 		
 		 		 	}
 		 		 }
