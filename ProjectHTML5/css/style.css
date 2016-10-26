@@ -1,0 +1,113 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	background-color: #e3f2fd;
+	@media (max-width: 600px) {
+    float: none; 
+    width: 100%; 
+  }
+}
+
+header{
+	background-image: url("../Images/banner.jpg");
+	height: 600px;
+	background-size: cover;
+}
+.banner{
+	text-align: center;
+	font-size: 1.6em;
+}
+
+.section1{
+	padding: 50px;
+	background-image: url("../Images/s1.jpg");
+	height: 450px;
+}
+.section2{
+	/*background-image: url("../Images/s.jpg");*/
+	background-size: cover;
+	height: 350px;
+	background-color: #d0d0d0s;
+	
+}
+.section3{
+	height: 650px;
+	background-image: url("../Images/s3.jpg");
+	background-size: cover;
+	
+}
+.footer{
+	color: #ffffff;
+	height: 300px;
+}
+
+#logo{
+	max-height: 127px;
+    max-width: 180px;
+    margin-top: 8px;
+}
+h1{
+	margin-top: 100px;
+	text-align: center;
+	font-size: 3em;
+	color: #ffffff ;
+}
+.info{
+	border: 1px solid #ccc;
+	float:  right;
+	width: 28%;
+	height: 352px;
+	padding: 10px
+}
+.banner img{
+	width: 100%;
+	max-height: 590px;
+}
+.main-content{
+	margin-top: 10px;
+}
+.card-content {
+    max-height: 200px;
+    overflow: hidden;
+}
+.post{
+	margin-top: 15px;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.post img{
+	height: 250px;
+	border: 1px solid #003399;
+
+}
+.listTest{
+	margin-top: 15px;
+	width: 67%;
+	height: 550px;
+	float: left;
+	border: 1px solid #003399;
+}
+
+.boxCourses{
+	margin-top: 15px;
+	border: 1px solid #003399;
+	height: 720px;
+}
+.course img{
+	max-height: 280px;
+}
+.card-image{
+	max-height: 300px;
+}
+h3{
+	margin-top: 10px;
+	text-align: center;	
+}
+nav ul a{
+	font-size: 16px;
+}
+.iConFooter li a img{
+	height: 20px;
+	width: 20px;
+}

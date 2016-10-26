@@ -1,0 +1,71 @@
+﻿Đề tài: Thiết kế website Học lập trình trực tuyến
+
+
+Mô tả
+
+- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.
+
+- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)
+
+- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+
+- Có thể tự nghĩ thêm các chức năng Cool khác. Tham khảo các website sau:
+CodeFights
+Codecademy
+SoloLearn
+TeamTreeHouse
+HackerRank
+
+
+Chức năng
+
+- Trang chủ: Hiển thị 1 số thông tin quảng cáo, các khóa học nổi bật, ...
+
+- Đăng nhập, đăng ký.
+
+- Trang danh sách khóa học: Hiển thị danh sách các khóa học (có thể chia ra làm nhiều chủ đề như Mobile, Web, ...).
+ư
+- Trang chi tiết khóa học: Hiển thị thông tin chi tiết của khóa học, giới thiệu về khóa học đó
+
+- Trang nâng cấp / mua khóa học + Trang thanh toán. Các hình thức thanh toán sẽ là:
+Đóng tại Techmaster
+Chuyển khoản ngân hàng
+Thanh toán trực tiếp (Internet Banking/Paypal/Visa/Thẻ cào)
+
+- Trang học trực tuyến: Cho phép người dùng xem lý thuyết bài học, làm các bài quiz, challenge. Có phần cho người dùng code trực tiếp và xem luôn kết quả
+
+- Trang thông tin người dùng:
+     + Thông tin cơ bản người dùng, có mục sửa thông tin, đổi mật khẩu,...
+     + Danh sách Các khóa học đã và đang hoạt động
+     + Danh sách các chứng chỉ, huy hiệu,... đã đạt được
+
+
+Yêu cầu
+
+- Website trình bày đẹp, dễ dùng
+
+- Có responsive (xem tốt trên cả các thiết bị di động)
+
+- Dữ liệu demo phải là dữ liệu thật không nhập lung tung
+
+
+Các bước thực hiện
+
+1. Tìm hiểu các website tương tự, có thể tham khảo giao diện nhưng không được clone (dự kiến 1 ngày)
+
+2. Vẽ mockup giao diện (desktop và mobile). Có thể sử dụng các phần mềm như Sketch, Photoshop hoặc Balsamiq (dự kiến 6 ngày)
+
+3. Tạo khung layout responsive cho giao diện theo chuẩn HTML5. Có thể dùng các framework như Bootstrap hoặc Materialize (dự kiến 3 ngày)
+
+4. Thiết kế chi tiết, phối màu. Được phép sử dụng các plugin jQuery, CSS (tham khảo phần cuối khóa học). Một số trang web chọn màu (chọn tối đa 3 - 4 màu chủ đạo cho trang web):colorcombos.com, color.adobe.com, colorhunter.com (dự kiến 10 ngày)
+
+5. Thay thế dữ liệu mockup bằng dữ liệu thật và fix bug phát sinh, hoàn thiện website (dự kiến 1 ngày)
+
+
+Nộp bài
+
+- Hạn nộp bài là Thứ 6 ngày 28/10/2016
+
+- Bài tập nộp lên github static page
+
+- Sau khi nộp bài, sẽ có 1 buổi bảo vệ để từng người lên trình bày về sản phẩm của mình. Khi trình bày sẽ cần trình bày cả bản mockup và ghi chú website, hình ảnh tham khảo. Dự kiến bảo vệ vào ngày 29/10.

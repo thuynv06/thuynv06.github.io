@@ -1,0 +1,35 @@
+header{
+	background-color: #f0f0f0;
+	height: 64px;
+	background-size: cover;
+}
+#workspace{
+	height: 500px;
+}
+.tabs{
+	height: 235px;
+	background-color: transparent;
+
+}
+.row .col.s3{
+	height: 228px;
+	border-radius: 50%
+}
+.codepen{
+	height: 70%;
+	/*margin-right: 10px;*/
+	border: 2px solid #000000;
+
+}
+.article{
+	height: 70%;
+	/*margin-right: 10px;*/
+	border: 2px solid #000000;
+
+}
+.result{
+	height: 70%;
+	border: 2px solid #000000;
+
+}
+

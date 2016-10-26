@@ -1,0 +1,184 @@
+<html>
+<head>
+	<title>Programing Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/updrage.css" >
+	<link rel="stylesheet" type="text/css" href="css/editor.css" media="screen">
+
+
+</head>
+<body>
+	<header >
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper blue darken-3">
+					<div class="row">				    		
+						<div class="col s12">
+							<div class="col s12 m6 l2">
+								<a href="#!" class="brand-logo"><img id="logo" src="Images/logo.png"></a>
+								<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+							</div>
+							
+							<div class="col s12 m4 l10">
+								<ul class="right hide-on-med-and-down">
+									<li><a href="coureses.html">Khóa Học</a></li>
+									<li><a href="codeonline.html">CodeOnline</a></li>
+									<li><a href="index.html">Quizzes</a></li>
+									<li><a href="index.html">Thảo Luận</a></li>
+									<li><a href="index.html">Blog</a></li>
+									<li><a  href="index.html"><i class="material-icons left">search</i></a></li>
+									<li><a class="modal-trigger waves-effect waves-light " href="#modalLogin">Đăng Nhập</a></li>
+									<li><a class="waves-effect waves-light " href="collapsible.html">Đăng Kí</a></li>
+								</ul>
+							</div>
+							<ul class="side-nav" id="mobile-demo">
+									<li><a href="coureses.html">Khóa Học</a></li>
+									<li><a href="codeonline.html">CodeOnline</a></li>
+									<li><a href="index.html">Quizzes</a></li>
+									<li><a href="index.html">Thảo Luận</a></li>
+									<li><a href="index.html">Blog</a></li>
+								<li><a href="collapsible.html">Đăng Nhập</a></li>
+								<li><a href="collapsible.html">Đăng Kí</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Modal dang nhap  -->
+		<div id="modalLogin" class="modal">
+			<div class="modal-content">
+				<h2 class="center-align">Đăng Nhập</h2>
+				<div class="center-align">
+					<div class="divider"></div>
+					<form class="col s12">
+						<div class="row center-align">
+							<div class="input-field col m10 offset-m1 blue-text left">
+								<i class="mdi-action-account-circle prefix"></i>
+								<input id="icon_prefix" type="text" class="validate">
+								<label for="icon_prefix">Tài Khoản</label>
+							</div>
+							<div class="input-field col m10 offset-m1 blue-text ">
+								<i class="mdi-action-lock-open prefix"></i>
+								<input id="icon_password" type="password" class="validate">
+								<label for="icon_password">Mật Khẩu</label>
+							</div>
+							<div class="input-field col m10 offset-m1 blue-text">
+								<input type="checkbox" class="blue-text" id="filled-in-box">
+								<label for="filled-in-box">Ghi Nhớ</label>
+							</div>
+						</div>
+					</form>
+					<div class="divider"></div>
+					<p>
+						<a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+						<a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close">Login</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+
+	</header>
+	<div class="main-content">
+<!-- 		<div class="row">
+			<div class="col s12">
+				<div class="tab1">
+					<ul class="tabs">
+						<li class="tab col s3"><a href="#test1"><img src="Images/learnPlan.png">Giáo Trình Khoa Học</a></li>
+						<li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+						<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+						<li class="tab col s3"><a href="#test4">Test 4</a></li>
+					</ul>
+				</div>
+
+				<div id="test1" class="col s12">Test 1</div>
+				<div id="test2" class="col s12">Test 2</div>
+				<div id="test3" class="col s12">Test 3</div>
+				<div id="test4" class="col s12">Test 4</div>
+
+				
+			</div>
+			
+		</div> -->
+
+
+
+
+		<div class="row"  id="workspace">
+			<div class="col s12">
+				<div class="article col s4 ui-widget-content">
+					<!-- <h5 class="ui-widget-header">Learn HTML</h5> -->
+					<div id="editor" class="ui-widget-header"> function foo(items) {
+						var x = "All this is syntax highlighted";
+						return x;
+					}</div>
+				</div>
+				<div class="codepen col s4">
+
+					<div id="editor1" class="ui-widget-header"> function foo(items) {
+						var x = "All this is syntax highlighted";
+						return x;
+					}</div>
+				</div>
+				<div class="result col s4">
+					<div id="editor2" class="ui-widget-header"> function foo(items) {
+						var x = "All this is syntax highlighted";
+						return x;
+					}</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+
+
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="js/materialize.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		var editor = ace.edit("editor");
+		editor.setTheme("ace/theme/monokai");
+		editor.getSession().setMode("ace/mode/javascript");
+		var editor1 = ace.edit("editor");
+		editor1.setTheme("ace/theme/monokai");
+		editor1.getSession().setMode("ace/mode/javascript");
+		var editor2 = ace.edit("editor");
+		editor2.setTheme("ace/theme/monokai");
+		editor2.getSession().setMode("ace/mode/javascript");
+		$( function() {
+			$( ".article" ).resizable({
+				maxHeight: 450,
+				maxWidth: 700,
+				minHeight: 250,
+				minWidth: 250
+			});
+			$( ".codepen" ).resizable({
+				maxHeight: 450,
+				// maxWidth: 400,
+				minHeight: 250,
+				minWidth: 250
+			});
+			$( ".result" ).resizable({
+				maxHeight: 450,
+				// maxWidth: 400,
+				minHeight: 250,
+				minWidth: 250
+			});
+
+		} );
+		</script>
+	</body>
+	</html>

@@ -1,0 +1,74 @@
+.tabCourse{
+    margin-bottom: 20px;
+}
+.wrap-Course{
+    margin-top: 20px;
+}
+.boxCoures{
+    float: left;
+    margin: 0 1.5% 25px;
+    overflow: hidden;
+  
+}
+.choose{
+    float: left;
+    font-size: 6px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.boxCourse-content{
+   overflow: hidden;
+}
+
+.title{
+    height: 60px;
+    background-color: #5f6065;
+    padding: 5px;
+}
+.blog{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.boxCourse-footer {
+    border-top: 1px solid #1a237e;
+    overflow: hidden;
+    padding: 0 20px 20px;
+}
+.btnMore{
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 15px;
+}
+.boxCourse-footer ul{
+	list-style: none;
+    overflow: hidden;
+    margin-top: 15px;
+}
+.boxCourse-footer ul li {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 18px;
+    font-size: 11px;
+}
+.courseIcon{
+    float: left;
+    overflow: hidden;
+    width: 89px;
+    border-radius: 45px;
+    display: block;
+    margin-right: 35px;
+}
+.boxCourse-footer ul li span{
+    
+    float: left;
+    overflow: hidden;
+    color: #1a237e;
+    font-size: 13px;	
+}
+.numOfCourse{
+    width: 20%;
+}

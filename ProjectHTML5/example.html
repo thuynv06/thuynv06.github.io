@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" id="ori" title="Portrait" type="text/css" href="css/PortraitStyle.css" media="print">
+	<link rel="stylesheet" id="test" type="text/css" href="css/style.css"> 
+	<meta charset="utf-8" >
+	</html>
+</head>
+<body >
+	<div id="main-content">
+		<div class="section1">
+			<div class="logo" id="logo" >
+			</div>
+			<div class="topDoctorText" id="topDoctorText">
+			</div>
+
+		</div>
+		<div id="section2">
+			<div class="greetingText" id="greetingText">
+				</div>
+				<div class="doctorimage" id="doctorImage">
+					<!-- <img src="Images/1.jpg"> -->
+				</div>
+				<div class="bottomdoctorText" id="bottomDoctorText">
+					<!-- <p>Somethings words </p> -->
+				</div>
+			</div>
+
+			<div class="line">
+				<hr>
+			</div>
+			<div id="section3">
+				<div class="surgery" id="surgeryInfoText">
+<!-- 					<p>As mentioned before, if this field is NOT initialized or set to nil in the API, this field is NOT generated. This field is of variable length & have the following ~dimensions</p> -->
+				</div>
+			</div>
+			<div class="line">
+				<hr>
+			</div>
+			<div id="section4" >
+				<div class="box">
+					<div class="bottomtext" id="bottomText1">
+						 <!-- <p>bottom Text1</p> -->
+					</div>
+					<div class="bottomImageHeader" id="bottomImageHeader1">
+						<!-- <p>Hình Ảnh 1</p> -->
+					</div>
+					<div class="bottomImage" id="bottomImage1">
+						<!-- <img src="Images/1.jpg"> -->
+					</div>
+					<div class="bottomImageCaption" id="bottomImageCaption1">
+						<!-- <p>Caption 1</p> -->
+					</div>
+				</div>
+				<div class="box">
+					<div class="bottomtext" id="bottomText2">
+						<!-- <p>bottom Text 2</p> -->
+					</div>
+					<div class="bottomImageHeader" id="bottomImageHeader2">
+						<!-- <p>Hình Ảnh 2</p> -->
+					</div>
+					<div class="bottomImage" id="bottomImage2">
+						<!-- <img src="Images/1.jpg"> -->
+					</div>
+					<div class="bottomImageCaption" id="bottomImageCaption2">
+						<!-- <p>Caption 2</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="line">
+				<hr>
+			</div>
+			<div id="section5">
+
+			</div>
+		</div>
+
+
+    <!-- // <script src="js/xepOnline.jqPlugin.js"></script> -->
+    <script type="text/javascript" src="js/mustache.js" ></script>
+    <!-- // <script src="js/jspdf.js"></script> -->
+    <script src="js/jquery-3.1.1.slim.min.js"></script>
+    <!-- // <script src="js/pdfFromHTML.js"></script> -->
+    <script>
+
+		// pageOrientation
+		function pageOrientation(x){
+			if (x==0)
+			{
+				$('#ori').replaceWith('<link id="ori" rel="stylesheet" title="Portrait" type="text/css" media="print" href="css/PortraitStyle.css?t=' + Date.now() + '"></link>');
+			}
+			else if(x==1){
+				$('#ori').replaceWith('<link id="ori" rel="stylesheet" title="Landscape" type="text/css" media="print" href="css/LandscapeStyle.css?t=' + Date.now() + '"></link>');
+			}
+		}
+
+		// numberingFormatSingleDigit
+
+		function numberingFormatSingleDigit(str){
+			if(str=="yes"){
+				str="@page {@bottom-center {counter-increment: page;counter-reset: page 1;content: counter(page)}}";
+				changeMediaStyle(str);
+			}else if(str="no"){
+				str="@bottom-center {counter-increment: page;counter-reset: page 1;content: counter(page) " + "of"+ " counter(pages);}";
+
+			}
+
+		}
+		var inlineMediaStyle = null;
+
+		function changeMediaStyle (str)
+		{
+			var head = document.getElementsByTagName('head')[0];
+			var newStyle = document.createElement('style');
+			newStyle.setAttribute('type', 'text/css');
+			newStyle.setAttribute('media', 'print');
+			newStyle.appendChild(document.createTextNode(str));
+
+			if (inlineMediaStyle != null)
+			{
+				head.replaceChild(newStyle, inlineMediaStyle)
+			}
+			else
+			{
+				head.appendChild(newStyle);
+			}
+			inlineMediaStyle = newStyle;
+		}
+
+		// numberImagesPerPage
+		/*
+		Ham modify số bức ảnh trên 1 trang 
+		*/
+		function numberImagesPerPage(numberImagesPerPage){
+			if ($( "#ori" ).attr( "title") =="Portrait"){
+				if (numberImagesPerPage%3 != 0){
+					var row=  Math.ceil(numberImagesPerPage/3);
+					// console.log(row);
+					var heightImage=10/row- row*0.25;
+				}else{
+					var row= numberImagesPerPage/3;
+					console.log(row);
+					var heightImage=10/row- row*0.25;
+				}
+				str='.area{	position: relative;float: left;width: 30%;height:'+heightImage+ 'in;color:red;text-align: center;margin-top: 0.25in;margin-right: 0.25in;} 	.area img{max-width: 2.33333333in;max-height:'+heightImage+'in;}';
+				console.log(str);
+				changeMediaStyle(str);
+
+
+			}
+			if($( "#ori" ).attr( "title") =="Landscape"){
+				if (numberImagesPerPage%4 != 0){
+					var row= Math.ceil(numberImagesPerPage/3);
+					// console.log(row);
+					var heightImage=7.25%row- row*0.25;
+				}else{
+					var row=  numberImagesPerPage/4;
+					// console.log(row);
+					var heightImage=7.25/row- row*0.25;
+				}
+				str='.area{	position: relative;float: left;width: 30%;height:'+heightImage+ 'in;color:red;text-align: center;margin-top: 0.25in;margin-right: 0.25in;} 	.area img{max-width: 2.33333333in;max-height:'+heightImage+'in;}';
+				console.log(str);
+				changeMediaStyle(str);
+			}
+		}
+
+
+		// function addDoctorInfo(Doctor){
+		// var template="<p>{{topDoctorText}}";
+		// var html = Mustache.to_html(template,Doctor);
+		// $('#topDoctorText').html(html);
+		// // add  Doctor Image
+		// var t2="<img src="+'{{DoctorImage}}'+">";
+		// var html2= Mustache.to_html(t2,Doctor);
+		// $('#doctorImage').html(html2);
+
+		// var t3="<p>{{bottomDoctorText}}";
+		// var html3 = Mustache.to_html(t3,Doctor);
+		// $('#bottomDoctorText').html(html3);
+		// }
+
+	// var bottom={
+	// 	bottomtext:"Somethings text",
+	// 	bottomImageHeader:"bottom Image Header",
+	// 	bottomImage:"Images/b1.jpg",
+	// 	bottomImageCaption:"Image Caption",
+	// }
+	// function addBottomText(bottom){
+	// 	$('#bottomText1').append('<p>'+bottom.bottomtext+'</p>');
+	// 	$('#bottomImageHeader1').append('<p>'+bottom.bottomImageHeader+'</p>');
+	// 	$('#bottomImage1').append('<img src="'+bottom.bottomImage+'">');
+	// 	$('#bottomImageCaption1').append('<p>'+bottom.bottomImageCaption+'</p>');
+	// }
+	
+	// function addLogo(logopath){
+	// 	$('#logo').append('<img src="'+logopath+'">');
+	// }
+	// function addGreetingText(greetingText){
+	// 	$('#greetingText').append('<p>'+str+'</p>');
+		
+	// }
+	// function addSurgery(surgeryText){
+	// 	$('#surgeryInfoText').append('<p>'+str+'</p>');
+	// }
+	var logo="Images/logo.jpg";
+	var str="As mentioned before, if this field is NOT initialized or set to nil in the API, this field is NOT generated. This field is of variable length & ave the following ~dimensions.As mentioned before, if this field is NOT initialized or set to nil in the API, this field is NOT generated. This field is of variable length & have the following ~dimensions.As mentioned before, if this field is NOT initialized or set to nil in the API, this fieldisNOTgenerated.This field is of variable length & have the following ~dimensions.As mentioned before, if this field is NOT initialized or set to nil in the API, this field is NOT generated. This field is of variable length & have the following ~dimensions.As mentioned before, if this field isinitialized or set to nil in";
+
+	var Doctor={
+	topDoctorText:"Jacob Kevorkian",
+	DoctorImage: "Images/doctor.jpg",
+	bottomDoctorText:"Jacob Kevorkian,thường được gọi là Bác sĩ tử thần",
+	}
+	var images=['1','2','3','4','4','6','1','2','3','4','4','6'];
+	function addImages(imagesArr){
+		var s='';
+		for (var i = 0; i < imagesArr.length; i++) {
+			s+='<div class="area"><img src={{'+ imagesArr[i] + '}}/></div>'	;		
+		};
+		$('#section5').html(s);
+	}
+	function addAll(logo,topDoctorText,bottomDoctorText,doctorImage,greetingText,surgeryInfoText,bottomtext1,bottomImageHeader1,bottomImage1,bottomImageCaption1,bottomText2,bottomImageHeader2,bottomImage2,bottomImageCaption2,images){
+		$('#logo').append('<img src={{'+logo+'}}>');
+		$('#greetingText').append('<p>{{'+greetingText+'}}</p>');
+		$('#topDoctorText').append('<p>{{'+topDoctorText+'}}</p>');
+		$('#doctorImage').append('<img src={{'+doctorImage+'}}>');
+		$('#bottomDoctorText').append('<p>{{'+bottomDoctorText+'}}</p>');
+		$('#surgeryInfoText').append('<p>{{'+surgeryInfoText+'}}</p>');
+		// add bottom text 1
+		$('#bottomText1').append('<p>'+bottomText1+'</p>');
+		$('#bottomImageHeader1').append('<p>'+bottomImageHeader1+'</p>');
+		$('#bottomImage1').append('<img src="'+bottomImage1 +'">');
+		$('#bottomImageCaption1').append('<p>'+bottomImageCaption1+'</p>');
+
+		$('#bottomText2').append('<p>'+bottomText2+'</p>');
+		$('#bottomImageHeader2').append('<p>'+bottomImageHeader2+'</p>');
+		$('#bottomImage2').append('<img src='+bottomImage2 +'>');
+		$('#bottomImageCaption2').append('<p>'+bottomImageCaption2+'</p>');
+		addImages(images);
+	}
+	// $(function(){
+
+		
+	// });
+	</script>
+
+</body>
+</html>
