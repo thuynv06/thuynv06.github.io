@@ -323,7 +323,7 @@
 			Type = "Table"
 			X = "-2340"
 			Y = "77"
-			Width = "757"
+			Width = "763"
 			Height = "243"
 			Flags = "0"
 			UseDataTable = "0"
@@ -365,11 +365,11 @@
 			HeaderWordWrap = "0"
 			WordWrap = "0"
 			HeaderSpace = "0"
-			HeaderHeight = "22"
-			RowHeight = "18"
+			HeaderHeight = "23"
+			RowHeight = "25"
 			FirstVisibleRow = "0"
 			FixedColumns = "0"
-			SortedColumn = "8"
+			SortedColumn = "0"
 			ValueColumn = "0"
 			SortedBlendFactor = "0.000000"
 			ColumnSort = "Ascending"
@@ -468,7 +468,7 @@
 					ColumnID = "4"
 					Heading = "Địa Chỉ"
 					VisibleCondition = ""
-					Width = "122"
+					Width = "81"
 					HeaderMargin = "0"
 					CellMargin = "0"
 					HasCustomOddBgColour = "0"
@@ -485,7 +485,7 @@
 					ColumnID = "8"
 					Heading = "Mô tả"
 					VisibleCondition = ""
-					Width = "114"
+					Width = "109"
 					HeaderMargin = "0"
 					CellMargin = "0"
 					HasCustomOddBgColour = "0"
@@ -515,34 +515,6 @@
 			</Columns>
 			<Data>
 				<Row
-					RowID = "2"
-					IsSelected = "0">
-					<Cell>
-						NCC02
-					</Cell>
-					<Cell>
-						Zaza
-					</Cell>
-					<Cell>
-						0968666666
-					</Cell>
-					<Cell>
-						thaostyle@gmail.com
-					</Cell>
-					<Cell>
-						Hoạt Động
-					</Cell>
-					<Cell>
-						Hà Nội
-					</Cell>
-					<Cell>
-						-
-					</Cell>
-					<Cell>
-						
-					</Cell>
-				</Row>
-				<Row
 					RowID = "1"
 					IsSelected = "0">
 					<Cell>
@@ -571,25 +543,53 @@
 					</Cell>
 				</Row>
 				<Row
-					RowID = "4"
+					RowID = "2"
 					IsSelected = "0">
 					<Cell>
-						NCC04
+						NCC02
 					</Cell>
 					<Cell>
-						Men Style
+						Zaza
 					</Cell>
 					<Cell>
 						0968666666
 					</Cell>
 					<Cell>
-						menstyle@gmail.com
+						thaostyle@gmail.com
 					</Cell>
 					<Cell>
-						Không Hoạt Động
+						Hoạt Động
 					</Cell>
 					<Cell>
-						Bình Dương
+						Hà Nội
+					</Cell>
+					<Cell>
+						-
+					</Cell>
+					<Cell>
+						
+					</Cell>
+				</Row>
+				<Row
+					RowID = "5"
+					IsSelected = "0">
+					<Cell>
+						NCC05
+					</Cell>
+					<Cell>
+						H&amp;M
+					</Cell>
+					<Cell>
+						0968666666
+					</Cell>
+					<Cell>
+						h&amp;m@gmail.com
+					</Cell>
+					<Cell>
+						Hoạt động
+					</Cell>
+					<Cell>
+						Hà Nội
 					</Cell>
 					<Cell>
 						-
@@ -627,25 +627,25 @@
 					</Cell>
 				</Row>
 				<Row
-					RowID = "5"
+					RowID = "4"
 					IsSelected = "0">
 					<Cell>
-						NCC05
+						NCC04
 					</Cell>
 					<Cell>
-						H&amp;M
+						Men Style
 					</Cell>
 					<Cell>
 						0968666666
 					</Cell>
 					<Cell>
-						h&amp;m@gmail.com
+						menstyle@gmail.com
 					</Cell>
 					<Cell>
-						Hoạt động
+						Không Hoạt Động
 					</Cell>
 					<Cell>
-						Hà Nội
+						Bình Dương
 					</Cell>
 					<Cell>
 						-
@@ -808,6 +808,266 @@
 			IsHyperlink = "0"
 			Fill = "None"
 			HorzAlign = "Right"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1366829116"
+			Type = "WebButton"
+			X = "-1700"
+			Y = "100"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Sửa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1366844169"
+			Type = "WebButton"
+			X = "-1640"
+			Y = "100"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Xóa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833573505"
+			Type = "WebButton"
+			X = "-1700"
+			Y = "125"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Sửa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833573985"
+			Type = "WebButton"
+			X = "-1640"
+			Y = "125"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Xóa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833578168"
+			Type = "WebButton"
+			X = "-1700"
+			Y = "150"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Sửa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833569279"
+			Type = "WebButton"
+			X = "-1640"
+			Y = "150"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Xóa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833572532"
+			Type = "WebButton"
+			X = "-1700"
+			Y = "175"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Sửa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833588393"
+			Type = "WebButton"
+			X = "-1640"
+			Y = "175"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Xóa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833581433"
+			Type = "WebButton"
+			X = "-1700"
+			Y = "200"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Sửa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
+			VertAlign = "Centre"/>
+		<Element
+			CID = "1833570352"
+			Type = "WebButton"
+			X = "-1640"
+			Y = "200"
+			Width = "60"
+			Height = "25"
+			Flags = "0"
+			UseDataTable = "0"
+			TableName = ""
+			FillColour = "241,239,226,0,23"
+			LineColour = "113,111,100,0,22"
+			TextColour = "0,0,0,0,19"
+			Typeface = ""
+			FontAttributes = "0"
+			TextSize = "Normal"
+			MarginLeft = "0"
+			MarginRight = "0"
+			MarginTop = "0"
+			MarginBottom = "0"
+			Text = "Xóa"
+			Depth = "3"
+			LineWidth = "1"
+			Shape = "Rectangle"
+			HorzAlign = "Centre"
 			VertAlign = "Centre"/>
 	</Elements>
 	<Connections
