@@ -1,0 +1,57 @@
+<Catalogue
+	CID = "1"
+	NextCID = "2">
+	<Files
+		CID = "1">
+		<FileInfo
+			ID = "0859A370-51B1-4FF0-BA393ABE055B89B7"
+			RelativePath = "Storyboard_Quanlynhacungcap.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "Storyboard.gui"/>
+		<FileInfo
+			ID = "24C53ED2-6F21-45FF-AD87EE10296DF0DF"
+			RelativePath = "Bao Cao Tồn Kho.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "Bao Cao Tồn Kho.gui"/>
+		<FileInfo
+			ID = "28FD323D-010D-414D-B273417D75391915"
+			RelativePath = "add NCC.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "Quản Lý Nhập Hàng.gui"/>
+		<FileInfo
+			ID = "698905A9-2DB6-45D6-9BF31156FEA33D11"
+			RelativePath = "View_print_PhieuNhap.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "View_print_PhieuNhap.gui"/>
+		<FileInfo
+			ID = "6F4B9026-9401-4AEC-A03E621E7B22EE0F"
+			RelativePath = "danhsachnhacungcap.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "main.gui"/>
+		<FileInfo
+			ID = "778EF374-BA47-48B5-ACA29C877250FE09"
+			RelativePath = "Phieu Xuat Kho.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "Phieu Xuat Kho.gui"/>
+		<FileInfo
+			ID = "858A1AC5-7E0F-4AD7-B2E79169D9EA0D6E"
+			RelativePath = "StoryBoard_PhieuNhapKho.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "PhieuNhapKho.gui"/>
+		<FileInfo
+			ID = "C010FE55-4A8F-42D1-BA054E5155E79F8B"
+			RelativePath = "StoryBoard _PhieuXuatHang.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "StoryBoard _Quan Ly Nhap Hang.gui"/>
+		<FileInfo
+			ID = "F00B142D-15AA-4A3F-A5752757139FA0F4"
+			RelativePath = "edit_Delete_NCC.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "edit_Delete_NCC.gui"/>
+		<FileInfo
+			ID = "FCFEC796-F99A-4790-B12B821220839F43"
+			RelativePath = "NhapKho_DanhSachPhieuNhap.gui"
+			OriginalRoot = "$Project"
+			OriginalPath = "Quan Ly Nhap Hang.gui"/>
+	</Files>
+</Catalogue>

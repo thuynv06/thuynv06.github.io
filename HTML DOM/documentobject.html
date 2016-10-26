@@ -5,14 +5,30 @@
 		</title> 
 		<script type="text/javascript">
 			function changeFontSize(x){
-				var str= x.toString() + "px"
+				var str= x.toString() + "px";
 				document.getElementById("box").style.fontSize=str;
+			}
+			function changeFontSize1(x){
+				// var str= x.toString() + "px";
+				document.getElementById("p1").style.fontSize=x+'px';
+			}
+			function autoIn(){
+					// var a=	document.getElementsByTagName('p');
+					// switch(){
+					// 	case p1:
+					// 	 increaseFontSize("p1");
+					// }
+
 			}
 			function increaseFontSize(paragraph){
 				var el = document.getElementById(paragraph);
-				var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
-				var fontSize = parseFloat(style); 
-				el.style.fontSize = (fontSize + 1) + 'px';
+				var x = window.getComputedStyle(el, null).getPropertyValue('font-size');
+				var fontSize = parseFloat(x);
+				if ( fontSize >=30){
+
+				}else{
+					el.style.fontSize = (fontSize + 1) + 'px';
+				} 
 				
 			}
 			function decreaseFontSize(paragraph)
@@ -30,7 +46,7 @@
 			}
 			function changeBgColor(color)
 			{
-				document.body.style.backgroundColor = "grey";
+				document.body.style.backgroundColor = color;
 			}
 			function copyContent(paragraph1,paragraph2){
 				 p1= document.getElementById(paragraph1);
@@ -50,6 +66,7 @@
 				<p id="p2"> Functional programming languages, like Lisp, ML and Haskell, tend to substitute a factorial program for Hello World, as functional programming emphasizes recursive techniques, whereas the original examples emphasize I/O, which violates the spirit of pure functional programming by producing side effects. Languages otherwise capable of Hello World (Assembly, C, VHDL) may also be used in embedded systems, where text output is either difficult (requiring additional components or communication with another computer) or nonexistent. For devices such as microcontrollers, field-pr</p>
 				<p id="p3"> many variations on the punctuation and casing of the phrase. Variations include the presence or absence of the comma and exclamation mark, and the capitalization of the 'H', both the 'H' and the 'W', or neither. Some languages are forced to implement different forms, 
 			</div>
+			<button type="buttton" onclick="changeFontSize1(40)">fix Font </button>
 		</div>
 		
 	</body>

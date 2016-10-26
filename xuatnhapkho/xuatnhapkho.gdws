@@ -1,0 +1,59 @@
+<Workspace
+	CID = "1"
+	NextCID = "2"
+	IconCategory = "Documents">
+	<OpenFiles
+		CID = "1"
+		LastActive = "10">
+		<File
+			FileID = "6F4B9026-9401-4AEC-A03E621E7B22EE0F"
+			RootPath = "$Container"
+			RelativePathname = "danhsachnhacungcap.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "28FD323D-010D-414D-B273417D75391915"
+			RootPath = "$Container"
+			RelativePathname = "add NCC.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "F00B142D-15AA-4A3F-A5752757139FA0F4"
+			RootPath = "$Container"
+			RelativePathname = "edit_Delete_NCC.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "FCFEC796-F99A-4790-B12B821220839F43"
+			RootPath = "$Container"
+			RelativePathname = "NhapKho_DanhSachPhieuNhap.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "858A1AC5-7E0F-4AD7-B2E79169D9EA0D6E"
+			RootPath = "$Container"
+			RelativePathname = "StoryBoard_PhieuNhapKho.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "24C53ED2-6F21-45FF-AD87EE10296DF0DF"
+			RootPath = "$Container"
+			RelativePathname = "Bao Cao Tồn Kho.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "698905A9-2DB6-45D6-9BF31156FEA33D11"
+			RootPath = "$Container"
+			RelativePathname = "View_print_PhieuNhap.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "0859A370-51B1-4FF0-BA393ABE055B89B7"
+			RootPath = "$Container"
+			RelativePathname = "Storyboard_Quanlynhacungcap.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "778EF374-BA47-48B5-ACA29C877250FE09"
+			RootPath = "$Container"
+			RelativePathname = "Phieu Xuat Kho.gui"
+			ViewSettings = ""/>
+		<File
+			FileID = "C010FE55-4A8F-42D1-BA054E5155E79F8B"
+			RootPath = "$Container"
+			RelativePathname = "StoryBoard _PhieuXuatHang.gui"
+			ViewSettings = ""/>
+	</OpenFiles>
+</Workspace>

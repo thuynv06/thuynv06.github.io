@@ -3,38 +3,107 @@
 	<head>
 		<title> Memory Card</title>
 		<meta charset="utf-8" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	</head>
-	<body >
-		<audio id="bg-music">
+	<body  style="background: url(Images/backgroud.jpg);background-size:cover;">
+
+		<audio id="bg-music" loop>
 		    <source src="a.MP3" type="audio/mpeg">
 		</audio>
+		<audio id="fail-music">
+		    <source src="fail.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="true-music">
+		    <source src="win.mp3" type="audio/mpeg">
+		</audio>
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h1 class="modal-title" id="myModalLabel">Memory Card</h1>
+		      </div>
+		      <div class="modal-body">
+		       	<h2> Choose play mode</h2>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" onclick="startNormal()" >Normal</button> 
+		        <!-- lat cac la bai trong vong 60s -->
+		        <button type="button" class="btn btn-primary" onclick="startHard()">Hard</button>
+		        <!-- lat cac la bai trong vong 30s -->
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade" id="loseDialog" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="gridSystemModalLabel">Time Over!</h4>
+		      </div>
+		      <div class="modal-body">
+		          <div ><img src="Images/youlose.jpg"></div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" onclick="load()">Start Again</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="modal fade" id="winDialog" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="gridSystemModalLabel">Time Over!</h4>
+		      </div>
+		      <div class="modal-body">
+		          <div ><img src="Images/win.jpg"></div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" onclick="load()">Try Again</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
 		<div class="snow">
-	
+			<div id="myProgress">
+		  		<div id="myBar">
+		  			<div id="label">0%</div>
+		  		</div>
+			</div>
 			<div class="content">
-				<div class="modal-begin">
-					
-				</div>
 			</div>
 		</div>
-		 <script src="jquery-3.1.1.slim.min.js"></script>
-		 <style type="text/css">
-			.flipped .back{
-				transform: rotateY(0deg);
-			}
-			.flipped .front{
-				transform: rotateY(180deg);
-			}
-		 </style>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		 <script >
+
+				 	
 			document.getElementById('bg-music').play();
 
-		 	var cards=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10'];
+		 	var cards=['f1','f2','f3','f4','f5','f6','f7','f8'];
 		 	var current=null;
 		 	var count=0;
-		 	var remainingTime=30;
-		 
+		 	var remainingTime=50;
+		 	function load(){
+		 		count=0;
+		 		remainingTime=50;
+		 		$('#loseDialog').modal('hide');
+		 		elem.style.width=0;
+		 		document.getElementById("label").innerHTML = 0 + '%';
+		 		loadPage();
+		 	}
 		 	function shuffle(array){
 		 		var currentIndex = array.length,temporaryValue,randomIndex;
 		 		while(0!==currentIndex){
@@ -47,14 +116,7 @@
 
 		 		return array;
 		 	}
-		 	function flipped(a){
-		 		$(a).children('.back').css({"transform": "rotateY(0deg)"});
-		 		$(a).children('.front').css({"transform": "rotateY(180deg)"});
-		 	}
-	 		function flippback(a){
-		 		$(a).children('.back').css({"transform": "rotateY(180deg)"});
-		 		$(a).children('.front').css({"transform": "rotateY(0deg)"});
-		 	}
+		
 		 	function flip (card){
 		 		
 		 		$(card).toggleClass('flipped');
@@ -66,6 +128,8 @@
 		 		 }else{
 		 		 	if(current.attr('data-name') != $(card).attr('data-name')){
 		 		 		console.log("khac");
+						document.getElementById('fail-music').play();
+
 		 		 		setTimeout(function(){
 		 		 			$(current).toggleClass('flipped');
 		 		 			$(card).toggleClass('flipped');
@@ -75,22 +139,62 @@
 		 		 		},500);
 		 		 		
 		 		 	}else{
+						document.getElementById('true-music').play();
+
 		 		 		setTimeout(function(){
 		 		 			$(card).css('opacity','0');
 		 		 			current.css('opacity','0');
 		 		 			console.log("giong");
 		 		 			current=null;
 		 		 			count++;
-		 		 			if(count==10){
-		 		 				alert("You are Win!")
+		 		 			if (count==8){
+		 		 				$('#winDialog').modal('show');	
+		 		 				alert("You are Win");
 		 		 			}
-		 		 		},200);
+		 		 		},300);
 		 		 		
 		 		 	}
 		 		 }
 		 	}
+		 	function startNormal(){
+		 		$('#myModal').modal('hide');
+	 			play(60);
 
-			$(function() {
+		 	}
+		 	function startHard(){
+		 		$('#myModal').modal('hide');
+		 		
+		 		remainingTime=10;
+	 			play(remainingTime);
+
+		 	}
+			function play(t){
+				var progress= t*10;
+		 	 	var id = setInterval(frame,progress);
+			  	function frame() {
+				    if (width >= 100) {
+				      clearInterval(id);
+				    } else {
+				      width++;
+				      elem.style.width = width + '%';
+				      document.getElementById("label").innerHTML = width * 1 + '%';
+				    	}
+			  		}
+				var run=setInterval(function(){
+				remainingTime--;
+				console.log(remainingTime);
+					if (remainingTime ==0){
+						clearInterval(run);
+						remainingTime=60;
+						$('#loseDialog').modal('show');
+						alert("You are Lose >.<!");
+					}
+				},1000);
+			}
+		 	var elem = document.getElementById("myBar");
+		  	var width = 1;
+		  	function loadPage(){
+				$('#myModal').modal('show');
 				cards = cards.concat(cards);
 				cards = shuffle(cards);
 
@@ -102,15 +206,9 @@
 					'<div class="back"><img src="Images/'+cards[i]+'.jpg"/> </div>'+'</div></div>';
 				};
 				$('.content').html(html);
-
-				var run= setInterval(function(){
-					remainingTime--;
-					console.log(remainingTime);
-					if(remainingTime==0){
-						clearInterval(run);
-						alert("You Are Lose!")
-					}
-				},1000);
+		  	}
+			$(function() {
+				loadPage();
 			});
 		</script>
 	</body>
