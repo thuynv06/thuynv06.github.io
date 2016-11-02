@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: roboto;
+}
+
+body{
+	background-color: #e3f2fd;
+
+}
+.page-course{
+	margin: 10px 10px 10px 10px;
+}
+header{
+	background-size: cover;
+}
+
+.footer{
+	color: #ffffff;
+	height: 300px;
+}
+.iConFooter li a img{
+	height: 20px;
+	width: 20px;
+}
+#logo{
+	max-height: 127px;
+	max-width: 245px;
+	margin-top: 8px;
+}
+h2{
+	font-size: 32px;	
+	color: #000000 ;
+	border-bottom: 3px solid #000000;
+}
+.box{
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.btnsocial img{
+	height: 20px;
+	width: 60px;
+}
+.lesson{
+	position: relative;
+}
+.comment{
+	margin-top: 10px;	
+}
+/*css collapse*/
+.fancy-collapse-panel .panel-default > .panel-heading {
+	padding: 0;
+
+}
+.fancy-collapse-panel .panel-heading a {
+	padding: 12px 35px 12px 15px;
+	display: inline-block;
+	width: 100%;
+	background-color: #ff5722;
+	color: #ffffff;
+	position: relative;
+	text-decoration: none;
+}
+.fancy-collapse-panel .panel-heading a:after {
+	font-family: "FontAwesome";
+	content: "\f147";
+	position: absolute;
+	right: 20px;
+	font-size: 20px;
+	font-weight: 400;
+	top: 50%;
+	line-height: 1;
+	margin-top: -10px;
+}
+
+.fancy-collapse-panel .panel-heading a.collapsed:after {
+	content: "\f196";
+}
+.panel-body ul li{
+	list-style: none;
+}
+.btndangkyngay{
+	text-align: center;
+
+}

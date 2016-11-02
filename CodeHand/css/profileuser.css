@@ -1,0 +1,104 @@
+body {
+	background: rgba(0, 188, 212, 0.52);
+}
+.user{
+}
+.user-details {
+	text-align: center;
+	position: relative;
+	padding: 0;
+}
+.user-details .user-image {
+	position: relative; 
+	z-index: 1;
+	width: 100%; 
+	text-align: center;
+}
+.user-image img {
+	clear: both; 
+	margin: auto; 
+	position: relative;
+	max-height: 170px;
+	max-width: 170px;
+}
+
+.user-details .user-info-block {
+	width: 100%;
+	position: absolute; 
+	top: 90px; 
+	background: rgb(255, 255, 255);
+	z-index: 0; 
+	padding-top: 35px;
+	border-radius: 15px;
+	margin-bottom: 35px;
+
+}
+.user-info-block .user-heading {
+	width: 100%; 
+	text-align: center;
+	margin: 50px 0 0;
+}
+.user-info-block .navigation {
+	float: left;
+	width: 100%;
+	margin: 0; padding: 0;
+	list-style: none; border-bottom: 1px solid #428BCA; 
+	border-top: 1px solid #428BCA;
+}
+.navigation li {
+	float: left;
+	margin: 0; 
+	padding: 0;
+}
+.navigation li a {
+	padding: 20px 30px;
+	float: left;
+}
+.navigation li.active a {
+	background: #428BCA;
+	color: #fff;
+}
+.user-info-block .user-body {
+	float: left; 
+	width: 100%;
+}
+
+.user-body .tab-content > div {
+	float: left; 
+	width: 100%;
+}
+.user-body .tab-content h3 {
+	width: 100%; 
+	margin: 10px 0;
+	color: #333;
+}
+.btnsocial{ 
+	border-radius: 50%;
+	width:50px;
+	height:50px;
+	line-height:18px; 
+}
+
+.table-user-information{
+	display: inline-block;
+	width: 30%;
+	position: relative;
+	text-align: center;
+	border: 2px solid #d0d0d0;
+}
+.tab_user{
+	display: inline-block;
+	border: 1px solid #3F51B5;
+}
+#user-info{
+	display: inline-block;
+	width: 50%;
+	border: 1px solid #3F51B5;
+}
+.boxBadge{
+	margin: 10px 0;
+}
+.boxBadge img{
+	max-height: 200px;
+	max-width: 200px;
+}

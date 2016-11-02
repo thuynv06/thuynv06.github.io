@@ -1,0 +1,153 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.css" >
+		<link rel="stylesheet" type="text/css" href="css/style.css" >
+		<link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen">
+		<linh rel="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+			<body>
+				<header>
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="index.html"><img id="logo" src="Images/logo.png"></a>
+							</div>
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
+									<li><a href="course.html">Khóa Học</a></li>
+									<li class="active"><a href="codehand.html">CodeHand</a></li>
+									<li><a href="quiz.html">Quizzes</a></li>
+									<li><a href="blog.html">Blog</a></li>
+								</ul>
+
+								<ul class="nav navbar-nav navbar-right">
+									<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
+									<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
+								</ul>
+								<form class="navbar-form navbar-right" role="search">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="tìm kiếm...">
+									</div>
+									<button type="submit" class="btn btn-default">Tìm Kiếm</button>
+								</form>
+							</div>
+						</div>
+					</nav>
+				</header>
+				<div class="main-codehand">
+					<div class="row">
+						<div >
+							<div class="source col-xs-12 col-sm-12 col-md-6 col-lg-8">
+								<div class="menu ">
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+										<ul class="nav nav-tabs">
+											<li class="active"><a href="#tab1" data-toggle="tab">HTML</a></li>
+											<li><a href="#tab2" data-toggle="tab">CSS</a></li>
+											<li><a href="#tab3" data-toggle="tab">JavaScript</a></li>
+										</ul>
+									</div>
+									<div class="setting">
+
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HTML/CSS/JS
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a href="#">PHP</a></li>
+											<li><a href="#">C++</a></li>
+											<li><a href="#">Java</a></li>
+										</ul>
+										<a id="btnTheme" class="btn btn-default" role="button" onclick="changeTheme()">ChangeTheme</a>
+
+									</div>
+								</div>
+								<div class="workspace">
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="tab1">
+											<pre class="code" id="editor" >
+												
+											</pre>
+										</div>
+
+										<div class="tab-pane fade" id="tab2">
+											<pre class="code" id="editor1" >
+							<!-- 					function foo(items) {
+												var x = "All this is syntax highlighted";
+												return x;
+											}	 -->		
+										</pre>
+									</div>
+									<div class="tab-pane fade" id="tab3">
+										<pre class="code" id="editor2" >
+											
+										</pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class=" col-xs-12 col-sm-12 col-md-6 col-lg-4">
+							<div class="menu">
+								<a class="btn btn-default" href="#" onclick="run()" role="button">Run</a>
+								<a class="btn btn-default" href="#" role="button">Save</a>
+								<a class="btn btn-default" href="#" role="button">Save And Dowload</a>
+							</div>
+							<div class="result" >
+								<iframe id="previewTarget">
+									<!DOCTYPE html>
+									<html lang ="en">
+									<head>
+										<meta charset="utf-8">
+									</head>
+									<body>
+
+									</body>
+									</html>
+								</iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="debug">
+					
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.1.1.slim.min.js"></script>
+		<script src="js/bootstrap.min.js" ></script>
+		<script src="src/ace.js"></script>
+		<script >
+		document.getElementById('editor').style.fontSize='14px';
+		var editor = ace.edit("editor");
+		editor.setTheme("ace/theme/monokai");
+		editor.getSession().setMode("ace/mode/html");
+		var editor_css = ace.edit("editor1");
+		editor_css.setTheme("ace/theme/merbivore");
+		editor_css.getSession().setMode("ace/mode/css");
+		var editor_javascript = ace.edit("editor2");
+		editor_javascript.setTheme("ace/theme/monokai");
+		editor_javascript.getSession().setMode("ace/mode/javascript");
+
+		function run() {
+			$('#previewTarget').contents().find('html').html('<style>'+editor_css.getValue() + '</style>'+(editor.getValue()));
+			document.getElementById('#previewTarget').contentWindow.eval(editor_javascript.getValue());
+		}
+		function changeTheme(){
+			$('body').toggleClass('change');
+		}
+		$(function(){
+
+			// document.getElementById('editor').resize();	
+		});
+		</script>
+	</body>
+	</html>
