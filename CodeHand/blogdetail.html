@@ -1,261 +1,261 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.css" >
-<link rel="stylesheet" type="text/css" href="css/style.css" >
-<link rel="stylesheet" type="text/css" href="css/blog.css" media="screen">
-<linh rel="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="css/style.css" >
+	<link rel="stylesheet" type="text/css" href="css/blog.css" media="screen">
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 
-<body>
-<header>
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
-	<a class="navbar-brand" href="index.html"><img id="logo" src="Images/logo.png"></a>
-</div>
-
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	<ul class="nav navbar-nav">
-		<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
-		<li><a href="course.html">Khóa Học</a></li>
-		<li ><a href="codehand.html">CodeHand</a></li>
-		<li><a href="quiz.html">Quizzes</a></li>
-		<li class="active"><a href="blog.html">Blog</a></li>
-	</ul>
-
-	<ul class="nav navbar-nav navbar-right">
-		<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
-		<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
-	</ul>
-	
-</div>
-</div>
-</nav>
-</header>
-<div class="container">
-<div class="row">
-<div class="page-post col-lg-8">
-
-<!-- the actual blog post: title/author/date/content -->
-<h1><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></h1>
-<p class="lead"><i class="fa fa-user"></i> by <a href="">Đinh Thiên Phúc</a>
-</p>
-<hr>
-<p><i class="fa fa-calendar"></i> Posted on August 24, 2016 at 9:00 PM</p>
-<p><i class="fa fa-tags"></i> Tags: <a href=""><span class="badge badge-info">Bootstrap</span></a> <a href=""><span class="badge badge-info">Web</span></a> <a href=""><span class="badge badge-info">CSS</span></a> <a href=""><span class="badge badge-info">HTML</span></a></p>
-
-<hr>
-<img src="Images/s1.jpg" class="img-responsive">
-<hr>
-<p class="lead">Bài viết này sẽ giải thích cho bạn graceful shutdown là gì, lợi ích khi sử dụng nó, cách cài đặt graceful shutdown trên ứng dụng Kubernetes. Ngoài ra chúng ta sẽ cùng thảo luận về cách validate, cách benchmark, và cả cách tránh các lỗi thường thấy.</p>
-<p>Chúng ta bắt đầu bàn về graceful shutdown của ứng dụng khi tất cả tài nguyên nó sử dụng/ cũng như tất cả các tiến trình dữ liệu nó xử lý đã đóng và được giải phóng.</p>
-<p>Nó có nghĩa là không có bất kì kết nối database nào còn mở và không có bất cứ request đang gửi nào bị fail bởi vì chúng ta đã dừng ứng dụng.</p>
-
-<blockquote>
-	<p>„Graceful shutdown: khi tất cả tài nguyên nó sử dụng/ cũng như tất cả các tiến trình dữ liệu nó xử lý đã đóng và được giải phóng. ”</p>
-	<footer>@RisingStack <cite title="Source Title"></cite></footer>
-</blockquote>
-<p>Kịch bản khả dĩ cho graceful shutdown của web server:
-	Ứng dụng nhận được notification yêu cầu dừng (nhận được tín hiệu SIGTERM)
-	Ứng dụng cho bộ cân bằng tải (load balancer) biết rằng nó chưa sẵn sàng cho các request mới hơn
-	Ứng dụng phục vụ tất cả các request đang được đưa tới
-	Ứng dụng giải phóng tất cả tài nguyên: database, hàng đợi, ...
-	Ứng dụng thoát ra với thông báo thành công (sử dụng hàm process.exit() ).
-	Bài viết này đi sâu vào cách shutting down các web server theo cách đúng đắn. Tuy nhiên hoàn toàn có thể áp dụng những kỹ thuật này vào công việc của bạn: tôi đề xuất bạn dừng các hàng đợi chiếm nhiều thời gian và hoàn thành các task/job hiện thời.<p>
-	<!-- <p><h4>I like the post? Like this!</h4></p> -->
-	<a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a>
-	<br/>
-	<hr>
-
-	<!-- the comment box -->
-	<div class="well">
-		<h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
-		<form role="form">
-			<div class="form-group">
-				<textarea class="form-control" rows="3"></textarea>
-			</div>
-			<button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
-		</form>
-	</div>
-	<!-- // <script src="https://apis.google.com/js/plusone.js"> -->
-	<!-- </script> -->
-	<hr>
-
-	<!-- the comments -->
-	<h3><i class="fa fa-comment"></i> Anonymous:
-		<small> 9:41 PM on November 24, 2016</small>
-	</h3>
-	<p>Bài viết rất hay, và bổ ích, Thanks!</p>
-
-	<h3><i class="fa fa-comment"></i> Anonymous:
-		<small> 10:47 PM on September 20, 2016</small>
-	</h3>
-	<p>Bài viết rất hay, và bổ ích, Thanks!</p>
-</div>
-<div class="col-lg-4">
-	<div class="well">
-		<h4><i class="fa fa-search"></i> gõ từ khóa tìm kiếm</h4>
-		<div class="input-group">
-			<input type="text" class="form-control">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button">
-					<i class="fa fa-search"></i>
-				</button>
-			</span>
-		</div>
-		<!-- /input-group -->
-	</div>
-	<!-- /well -->
-	<div class="well">
-		<h4><i class="fa fa-tags"></i>Tags:</h4>
-		<div class="row">
-			<div class="col-lg-6">
-				<ul class="list-unstyled">
-					<li><a href=""><span class="badge badge-info">IOS</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">C#</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">Java</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">Node.JS</span></a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-lg-6">
-				<ul class="list-unstyled">
-					<li><a href=""><span class="badge badge-info">Bootstrap</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">PHP</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">Swift</span></a>
-					</li>
-					<li><a href=""><span class="badge badge-info">Java</span></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /well -->
-	<div class="well">
-		<h4><i class="fa fa-thumbs-o-up"></i> Follow me!</h4>
-		<ul>
-			<p>	<a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a>
-				<a title="Twitter" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> 
-				<a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> 
-				<a title="GitHub" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-github fa-stack-1x"></i></span></a>
-			</p>
-		</ul>
-	</div>
-	<!-- /well -->
-	<!-- /well -->
-	<div class="well">
-		<h4><i class="fa fa-fire"></i> Bài Viết Đọc Nhiều</h4>
-		<ul>
-			<li><a href="">WPF vs. Windows Forms cái nào tốt hơn?</a></li>
-			<li><a href="">Cách tạo web reponsive với bootstrap như thế nào?</a></li>
-			<li><a href="">Node.jS xây dựng website tốc độ cao</a></li>
-			<li><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></li>
-			<li><a href="">30 câu hỏi khi đi phỏng vấn apple</a></li>
-			<li><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></li>
-		</ul>
-	</div>
-
-</div>
-</div>
-
-
-<hr>
-
-<footer>
-<div class="row">
-	<div class="col-lg-12">
-		<div class="col-lg-3 col-md-6">
-			<div class="container">
-
-
-				<div class="col-lg-3">
-					<div class="cuadro_intro_hover " style="background-color:#cccccc;">
-						<p style="text-align:center; margin-top:20px;">
-							<img src="Images/learnPlan.png" class="img-responsive" alt="">
-						</p>
-						<div class="caption">
-							<div class="blur"></div>
-							<div class="caption-text">
-								<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Learn Plan</h3>
-								<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
-								<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
-							</div>
-						</div>
+	<body>
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html"><img id="logo" src="Images/logo.png"></a>
 					</div>
 
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
+							<li><a href="course.html">Khóa Học</a></li>
+							<li ><a href="codehand.html">CodeHand</a></li>
+							<li><a href="quiz.html">Quizzes</a></li>
+							<li class="active"><a href="blog.html">Blog</a></li>
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
+							<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
+						</ul>
+						
+					</div>
 				</div>
-				<div class="col-lg-3">
-					<div class="cuadro_intro_hover " style="background-color:#cccccc;">
-						<p style="text-align:center; margin-top:20px;">
-							<img src="Images/i2.jpg" class="img-responsive" alt="">
-						</p>
-						<div class="caption">
-							<div class="blur"></div>
-							<div class="caption-text">
-								<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Learn Plan</h3>
-								<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
-								<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="page-post col-lg-8">
+
+					<!-- the actual blog post: title/author/date/content -->
+					<h1><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></h1>
+					<p class="lead"><i class="fa fa-user"></i> by <a href="">Đinh Thiên Phúc</a>
+					</p>
+					<hr>
+					<p><i class="fa fa-calendar"></i> Posted on August 24, 2016 at 9:00 PM</p>
+					<p><i class="fa fa-tags"></i> Tags: <a href=""><span class="badge badge-info">Bootstrap</span></a> <a href=""><span class="badge badge-info">Web</span></a> <a href=""><span class="badge badge-info">CSS</span></a> <a href=""><span class="badge badge-info">HTML</span></a></p>
+
+					<hr>
+					<img src="Images/s1.jpg" class="img-responsive">
+					<hr>
+					<p class="lead">Bài viết này sẽ giải thích cho bạn graceful shutdown là gì, lợi ích khi sử dụng nó, cách cài đặt graceful shutdown trên ứng dụng Kubernetes. Ngoài ra chúng ta sẽ cùng thảo luận về cách validate, cách benchmark, và cả cách tránh các lỗi thường thấy.</p>
+					<p>Chúng ta bắt đầu bàn về graceful shutdown của ứng dụng khi tất cả tài nguyên nó sử dụng/ cũng như tất cả các tiến trình dữ liệu nó xử lý đã đóng và được giải phóng.</p>
+					<p>Nó có nghĩa là không có bất kì kết nối database nào còn mở và không có bất cứ request đang gửi nào bị fail bởi vì chúng ta đã dừng ứng dụng.</p>
+
+					<blockquote>
+						<p>„Graceful shutdown: khi tất cả tài nguyên nó sử dụng/ cũng như tất cả các tiến trình dữ liệu nó xử lý đã đóng và được giải phóng. ”</p>
+						<footer>@RisingStack <cite title="Source Title"></cite></footer>
+					</blockquote>
+					<p>Kịch bản khả dĩ cho graceful shutdown của web server:
+						Ứng dụng nhận được notification yêu cầu dừng (nhận được tín hiệu SIGTERM)
+						Ứng dụng cho bộ cân bằng tải (load balancer) biết rằng nó chưa sẵn sàng cho các request mới hơn
+						Ứng dụng phục vụ tất cả các request đang được đưa tới
+						Ứng dụng giải phóng tất cả tài nguyên: database, hàng đợi, ...
+						Ứng dụng thoát ra với thông báo thành công (sử dụng hàm process.exit() ).
+						Bài viết này đi sâu vào cách shutting down các web server theo cách đúng đắn. Tuy nhiên hoàn toàn có thể áp dụng những kỹ thuật này vào công việc của bạn: tôi đề xuất bạn dừng các hàng đợi chiếm nhiều thời gian và hoàn thành các task/job hiện thời.<p>
+						<!-- <p><h4>I like the post? Like this!</h4></p> -->
+						<a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a>
+						<br/>
+						<hr>
+
+						<!-- the comment box -->
+						<div class="well">
+							<h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
+							<form role="form">
+								<div class="form-group">
+									<textarea class="form-control" rows="3"></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
+							</form>
+						</div>
+						<!-- // <script src="https://apis.google.com/js/plusone.js"> -->
+						<!-- </script> -->
+						<hr>
+
+						<!-- the comments -->
+						<h3><i class="fa fa-comment"></i> Anonymous:
+							<small> 9:41 PM on November 24, 2016</small>
+						</h3>
+						<p>Bài viết rất hay, và bổ ích, Thanks!</p>
+
+						<h3><i class="fa fa-comment"></i> Anonymous:
+							<small> 10:47 PM on September 20, 2016</small>
+						</h3>
+						<p>Bài viết rất hay, và bổ ích, Thanks!</p>
+					</div>
+					<div class="col-lg-4">
+						<div class="well">
+							<h4><i class="fa fa-search"></i> gõ từ khóa tìm kiếm</h4>
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+							<!-- /input-group -->
+						</div>
+						<!-- /well -->
+						<div class="well">
+							<h4><i class="fa fa-tags"></i>Tags:</h4>
+							<div class="row">
+								<div class="col-lg-6">
+									<ul class="list-unstyled">
+										<li><a href=""><span class="badge badge-info">IOS</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">C#</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">Java</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">Node.JS</span></a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-lg-6">
+									<ul class="list-unstyled">
+										<li><a href=""><span class="badge badge-info">Bootstrap</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">PHP</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">Swift</span></a>
+										</li>
+										<li><a href=""><span class="badge badge-info">Java</span></a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
+						<!-- /well -->
+						<div class="well">
+							<h4><i class="fa fa-thumbs-o-up"></i> Follow me!</h4>
+							<ul>
+								<p>	<a title="Facebook" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a>
+									<a title="Twitter" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> 
+									<a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> 
+									<a title="GitHub" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-github fa-stack-1x"></i></span></a>
+								</p>
+							</ul>
+						</div>
+						<!-- /well -->
+						<!-- /well -->
+						<div class="well">
+							<h4><i class="fa fa-fire"></i> Bài Viết Đọc Nhiều</h4>
+							<ul>
+								<li><a href="">WPF vs. Windows Forms cái nào tốt hơn?</a></li>
+								<li><a href="">Cách tạo web reponsive với bootstrap như thế nào?</a></li>
+								<li><a href="">Node.jS xây dựng website tốc độ cao</a></li>
+								<li><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></li>
+								<li><a href="">30 câu hỏi khi đi phỏng vấn apple</a></li>
+								<li><a href="">Tạo Graceful Shutdown với Node.js và Kubernetes</a></li>
+							</ul>
+						</div>
+
 					</div>
 				</div>
 
 
-				<div class="col-lg-3 col-md-6">
-					<h3>Categories:</h3>
-					<ul>
-						<li><a href=""><i class="fa fa-file"></i> News</a></li>
-						<li><a href=""><i class="fa fa-android"></i> Android</a></li>
-						<li><a href=""><i class="fa fa-code"></i> C#</a></li>
-						<li><a href=""><i class="fa fa-code"></i> Java</a></li>
-						<li><a href=""><i class="fa fa-book"></i> Books</a></li>
-						<li><a href=""><i class="fa fa-globe"></i> Web</a></li>
-						<li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
-					</ul>
-				</div>
+				<hr>
 
-				<div class="col-lg-3 col-md-6">
-					<h3>Follow:</h3>
-					<a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
-						<i class="fa fa-square-o fa-stack-2x"></i>
-						<i class="fa fa-twitter fa-stack-1x"></i>
-					</span>
-					Twitter</a>
-					<a href=""  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
-						<i class="fa fa-square-o fa-stack-2x"></i>
-						<i class="fa fa-github fa-stack-1x"></i>
-					</span>
-					GitHub</a>
-				</div>
-			</footer>
-
-		</div>
+				<footer>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="col-lg-3 col-md-6">
+								<div class="container">
 
 
+									<div class="col-lg-3">
+										<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+											<p style="text-align:center; margin-top:20px;">
+												<img src="Images/learnPlan.png" class="img-responsive" alt="">
+											</p>
+											<div class="caption">
+												<div class="blur"></div>
+												<div class="caption-text">
+													<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Learn Plan</h3>
+													<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
+													<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
+												</div>
+											</div>
+										</div>
 
-	</div>
-	<script src="js/jquery-3.1.1.slim.min.js"></script>
-	<script src="js/bootstrap.min.js" ></script>
-	<script src="src/ace.js"></script>
-	<script >
+									</div>
+									<div class="col-lg-3">
+										<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+											<p style="text-align:center; margin-top:20px;">
+												<img src="Images/i2.jpg" class="img-responsive" alt="">
+											</p>
+											<div class="caption">
+												<div class="blur"></div>
+												<div class="caption-text">
+													<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Learn Plan</h3>
+													<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
+													<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
+												</div>
+											</div>
+										</div>
+									</div>
 
-	$(function(){
 
-	});
-	</script>
-</body>
-</html>
+									<div class="col-lg-3 col-md-6">
+										<h3>Categories:</h3>
+										<ul>
+											<li><a href=""><i class="fa fa-file"></i> News</a></li>
+											<li><a href=""><i class="fa fa-android"></i> Android</a></li>
+											<li><a href=""><i class="fa fa-code"></i> C#</a></li>
+											<li><a href=""><i class="fa fa-code"></i> Java</a></li>
+											<li><a href=""><i class="fa fa-book"></i> Books</a></li>
+											<li><a href=""><i class="fa fa-globe"></i> Web</a></li>
+											<li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
+										</ul>
+									</div>
+
+									<div class="col-lg-3 col-md-6">
+										<h3>Follow:</h3>
+										<a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-twitter fa-stack-1x"></i>
+										</span>
+										Twitter</a>
+										<a href=""  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-github fa-stack-1x"></i>
+										</span>
+										GitHub</a>
+									</div>
+								</footer>
+
+							</div>
+
+
+
+						</div>
+						<script src="js/jquery-3.1.1.slim.min.js"></script>
+						<script src="js/bootstrap.min.js" ></script>
+						<script src="src/ace.js"></script>
+						<script >
+
+						$(function(){
+
+						});
+						</script>
+					</body>
+					</html>
