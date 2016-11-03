@@ -1,4 +1,6 @@
-
+body {
+  background-color: rgba(0, 188, 212, 0.52);
+}
 #logo{
   width: 140px;
   max-height: 51px;
@@ -233,7 +235,7 @@ hr{
 }
 
 label{
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 input,

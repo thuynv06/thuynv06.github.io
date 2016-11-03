@@ -1,7 +1,5 @@
 
-body {
-	background-color: rgba(0, 188, 212, 0.52);
-}
+
 .main-codehand{
 	margin-top: 17px;	
 }
@@ -16,7 +14,6 @@ body {
 .menu{
 	position: relative;
 	height: 45px;
-	/*border: 1px solid #d0d0d0;*/
 }
 .nav-tabs li a,
 .nav-tabs li a:active,
@@ -29,8 +26,6 @@ body {
 
 .workspace{
 	height: 500px;
-	border: 1px solid #d0d0d0;
-
 }
 .result{
 	height: 546px;
@@ -49,6 +44,7 @@ body {
 	bottom: 0;
 	left: 0;
 	height: 100%;
+	margin-left: 16px;
 }
 .code{
 	height: 545px;
