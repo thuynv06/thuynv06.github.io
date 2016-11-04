@@ -1,17 +1,27 @@
 body {
-  background-color: rgba(0, 188, 212, 0.52);
+  background-color: rgba(158, 158, 158, 0.41);
 }
 #logo{
   width: 140px;
   max-height: 51px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .navbar-default{
   height: 77px;
-  background-color: #ff5722;
+  background-color:#616db3;
 }
-.navbar-nav > li > a{
-  font-size: 16px;
+.banner{
+  height: 400px;
+  background-color: #282d4a;
+}
+.left-header{
+  padding: 90px;
+  color: white;
+  text-align: center;
+}
+@media (min-width: 768px)
+.navbar {
+  /* border-radius: 4px; */
 }
 .navbar-brand {
   float: left;
@@ -240,34 +250,98 @@ label{
 
 input,
 input::-webkit-input-placeholder {
-    font-size: 11px;
-    padding-top: 3px;
+  font-size: 11px;
+  padding-top: 3px;
 }
 
 .main-login{
   background-color: #fff;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 
 }
 .main-center{
   margin-top: 30px;
   margin: 0 auto;
   max-width: 330px;
-    padding: 40px 40px;
+  padding: 40px 40px;
 
 }
-
 .login-button{
   margin-top: 5px;
 }
-
 .login-register{
   font-size: 11px;
   text-align: center;
+}
+.footer{
+  position: relative;
+  margin-top: 30px;
+  color: #ffffff;
+  background-color: #282d4a;
+  padding-bottom: 10px;
+}
+.footer ul li {
+  list-style: none;
+  font-size: 16px;
+}
+.foot-content{
+  padding: 60px 60px 0px 60px;
+}
+.iConFooter li a img{
+  height: 20px;
+  width: 20px;
+}
+
+a{
+  color: #00BCD4;
+}
+.right-header{
+  padding: 50px;
+  margin-right: 50px;
+}
+h2{
+  text-align: center;
+  font-size: 45px;
+  color: #202544;
+}
+.introduce{
+  
+  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  max-height: 300px;
+  overflow: hidden;
+}
+label.star {
+  float: right;
+  padding: 3px;
+  font-size: 20px;
+  color:#afafaf;
+  transition: all .2s;
+}
+.orange-circle-button {
+  float: right;
+  box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+  border: .5em solid #E84D0E;
+  font-size: 1em;
+  line-height: 1.1em;
+  color: #ffffff;
+  background-color: #e84d0e;
+  margin-right: 15px;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  position: relative;
+}
+div.stars {
+  height: 10px;
+  float: left;
+  width: 124px;
+  display: inline-block;
 }

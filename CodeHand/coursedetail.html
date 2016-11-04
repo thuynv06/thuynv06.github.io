@@ -1,293 +1,269 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" href="css/bootstrap.css" >
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="css/blog.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="css/coursedetail.css" >
-		<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
-			<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-		</head>
-		<!-- <link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen"> -->
-		<body>
-			<header>
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="index.html"><img id="logo" src="Images/logo.png"></a>
-						</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/blog.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/coursedetail.css" >
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+<!-- <link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen"> -->
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img id="logo" src="Images/logo.png"></a>
+				</div>
 
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
-								<li ><a href="course.html">Khóa Học</a></li>
-								<li ><a href="codehand.html">CodeHand</a></li>
-								<li ><a href="quiz.html">Quizzes</a></li>
-								<li><a href="blog.html">Blog</a></li>
-							</ul>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
+						<li ><a href="course.html">Khóa Học</a></li>
+						<li ><a href="codehand.html">CodeHand</a></li>
+						<li ><a href="quiz.html">Quizzes</a></li>
+						<li><a href="blog.html">Blog</a></li>
+					</ul>
 
-							<ul class="nav navbar-nav navbar-right">
-								<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
-								<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
-							</ul>
-							<form class="navbar-form navbar-right" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="tìm kiếm...">
-								</div>
-								<button type="submit" class="btn btn-default">Tìm Kiếm</button>
-							</form>
-						</div>
-					</div>
-				</nav>
-			</header>
-			<div class="container">
-				<div class="row">
-					<div class="page-course col-xs-12 col-sm-12 col-md-12 col-lg-10">
-						<div class="box">
-							<div class="introCourse">
-								<h2>Giới Thiệu</h2>
-								<h3>Lớp 3 khai giảng 21/8/2016. Học tại phòng lab số 14, ngõ 4, Nguyễn Đình Chiểu </h6>
-									<p>
-										Khóa học lập trình Android ứng dụng thực tế 12 buổi. "Training on code" 10 ứng dụng đầy đủ từ chuyên gia phát triển game và ứng dụng di động Nguyễn Bá Thành (CoFounder & CEO WePlay).</p>
-										<h3>Qua mỗi buổi học, học viên thu được gì?</h3>
-										<ul>
-											<li>Nắm bắt kiến thức lập trình di động Android</li>
-											<li>Tự tạo ứng dụng Android. Cách nào kiếm tiền bằng ứng dụng đó hoặc dùng làm CV xin việc thiết thực. </li>
-											<li>Nhận được chia sẻ góp ý từ lập trình viên thực sự đã có nhiều thành công và thất bại phát triển - kinh doanh ứng dụng di động. Nếu bạn có dự án muốn khởi nghiệp có thể nhận được đầu tư hoặc giới thiệu đầu tư từ anh Nguyễn Bá Thành.</li>
-										</ul>
-										<h3>Đối Tượng:</h3>
-										<ul>
-											<li>Các bạn muốn tự code ra các ứng dụng của riêng mình để kiếm tiền thông qua các app này.</li>
-											<li>Các lập trình viên, sinh viên CNTT muốn lập trình gia công ứng dụng di động</li>
-										</ul>	
-									</div>
-									<div class="author">
-										<h2>Trinh Minh Cường</h2>
-										<p>
-											Mình bắt đầu lập trình Pascal từ năm 1993, với chiếc máy PC 2Mb RAM, 40Mb ổ cứng. Đến nay, đã hoàn thành gần 60 dự án phần mềm lớn nhỏ. Mình dạy lớp iOS, Node.js tại Techmaster. Ngoài ra mình còn làm cố vấn công nghệ cho các nhóm khởi nghiệp, kiêm quản lý dự án tại Techmaster. Mình bơi mỗi ngày 2000 mét.
-										</p>
-									</div>
-									<div class="allLessons">
-										<h2>Bài Giảng</h2>
-										<div class="lesson col-lg-12">
-											<div class="fancy-collapse-panel">
-												<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-													<div class="panel panel-default">
-														<div class="panel-heading" role="tab" id="heading1">
-															<h4 class="panel-title">
-																<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">1. Giới thiệu iOS. Làm quen với môi trường lập trình trên Mac OS X (4 lesson)
-																</a>
-															</h4>
-														</div>
-														<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
-															<div class="panel-body">
-																<div>
-																	<ul>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mở Đầu</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Giới thiệu về Android Market</a></li>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
+						<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
+					</ul>
 
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Làm quen với Android Studio</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Ứng dụng "Hello Android"</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Máy ảo Android</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Debug trên Android Studio</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Cấu trúc dự án Android trên Android Studio</a></li>
-																		<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Giải phương trình bậc 2, Tính tổng 100 số tự nhiên</a></li>
-																	</ul>
-																	</div 
-																</div>
-															</div>
-														</div>
-														<div class="panel panel-default">
-															<div class="panel-heading" role="tab" id="headingTwo">
-																<h4 class="panel-title">
-																	<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Buổi 2: Tìm hiểu về Activity (7 lesson)
-																	</a>
-																</h4>
-															</div>
-															<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-																<div class="panel-body">
-																	<div>
-																		<ul>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mở Đầu</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Giới thiệu về Android Market</a></li>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="page-course col-xs-12 col-sm-12 col-md-12 col-lg-10">
+				<div class="box">
+					<div class="introCourse">
+						<h2>Giới Thiệu</h2>
+						<h3>Lớp 3 khai giảng 21/8/2016. Học tại phòng lab số 14, ngõ 4, Nguyễn Đình Chiểu </h6>
+							<p>
+								Khóa học lập trình Android ứng dụng thực tế 12 buổi. "Training on code" 10 ứng dụng đầy đủ từ chuyên gia phát triển game và ứng dụng di động Nguyễn Bá Thành (CoFounder & CEO WePlay).</p>
+								<h3>Qua mỗi buổi học, học viên thu được gì?</h3>
+								<ul>
+									<li>Nắm bắt kiến thức lập trình di động Android</li>
+									<li>Tự tạo ứng dụng Android. Cách nào kiếm tiền bằng ứng dụng đó hoặc dùng làm CV xin việc thiết thực. </li>
+									<li>Nhận được chia sẻ góp ý từ lập trình viên thực sự đã có nhiều thành công và thất bại phát triển - kinh doanh ứng dụng di động. Nếu bạn có dự án muốn khởi nghiệp có thể nhận được đầu tư hoặc giới thiệu đầu tư từ anh Nguyễn Bá Thành.</li>
+								</ul>
+								<h3>Đối Tượng:</h3>
+								<ul>
+									<li>Các bạn muốn tự code ra các ứng dụng của riêng mình để kiếm tiền thông qua các app này.</li>
+									<li>Các lập trình viên, sinh viên CNTT muốn lập trình gia công ứng dụng di động</li>
+								</ul>	
+							</div>
+							<div class="author">
+								<h2>Trinh Minh Cường</h2>
+								<p>
+									Mình bắt đầu lập trình Pascal từ năm 1993, với chiếc máy PC 2Mb RAM, 40Mb ổ cứng. Đến nay, đã hoàn thành gần 60 dự án phần mềm lớn nhỏ. Mình dạy lớp iOS, Node.js tại Techmaster. Ngoài ra mình còn làm cố vấn công nghệ cho các nhóm khởi nghiệp, kiêm quản lý dự án tại Techmaster. Mình bơi mỗi ngày 2000 mét.
+								</p>
+							</div>
+							<div class="allLessons">
+								<h2>Bài Giảng</h2>
+								<div class="lesson col-lg-12">
+									<div class="fancy-collapse-panel">
+										<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading1">
+													<h4 class="panel-title">
+														<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">1. Giới thiệu iOS. Làm quen với môi trường lập trình trên Mac OS X (4 lesson)
+														</a>
+													</h4>
+												</div>
+												<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+													<div class="panel-body">
+														<div>
+															<ul>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mở Đầu</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Giới thiệu về Android Market</a></li>
 
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Làm quen với Android Studio</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Ứng dụng "Hello Android"</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Máy ảo Android</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Debug trên Android Studio</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Cấu trúc dự án Android trên Android Studio</a></li>
-																			<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Giải phương trình bậc 2, Tính tổng 100 số tự nhiên</a></li>
-																		</ul>
-																	</div >
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="panel panel-default">
-														<div class="panel-heading" role="tab" id="heading3">
-															<h4 class="panel-title">
-																<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 4: Giao diện người dùng trong Android (12 lesson)
-																</a>
-															</h4>
-														</div>
-														<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-															<div class="panel-body">
-																<div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="panel panel-default">
-														<div class="panel-heading" role="tab" id="heading3">
-															<h4 class="panel-title">
-																<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 5: Giao diện người dùng trong Android (12 lesson)
-																</a>
-															</h4>
-														</div>
-														<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-															<div class="panel-body">
-																<div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="panel panel-default">
-														<div class="panel-heading" role="tab" id="heading3">
-															<h4 class="panel-title">
-																<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 6: Giao diện người dùng trong Android (12 lesson)
-																</a>
-															</h4>
-														</div>
-														<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-															<div class="panel-body">
-																<div>
-																</div>
-															</div>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Làm quen với Android Studio</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Ứng dụng "Hello Android"</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Máy ảo Android</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Debug trên Android Studio</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Cấu trúc dự án Android trên Android Studio</a></li>
+																<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Giải phương trình bậc 2, Tính tổng 100 số tự nhiên</a></li>
+															</ul>
+															</div 
 														</div>
 													</div>
 												</div>
-
-
-
-											</div>
-											<div class="btndangkyngay">
-												<button type="button" class="btn btn-primary btn-lg " onclick="window.location.href='learnonline.html'">Học Ngay</button>
-											</div>
-
-										</div>
-
-										<!-- comment -->
-										<div class="comment">
-											<div class="">
-												<h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
-												<form role="form">
-													<div class="form-group">
-														<textarea class="form-control" rows="3"></textarea>
+												<div class="panel panel-default">
+													<div class="panel-heading" role="tab" id="headingTwo">
+														<h4 class="panel-title">
+															<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Buổi 2: Tìm hiểu về Activity (7 lesson)
+															</a>
+														</h4>
 													</div>
-													<button type="submit" class="btn btn-primary" ><i class="fa fa-reply"></i> Submit</button>
-												</form>
+													<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+														<div class="panel-body">
+															<div>
+																<ul>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mở Đầu</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Giới thiệu về Android Market</a></li>
+
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Làm quen với Android Studio</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Ứng dụng "Hello Android"</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Máy ảo Android</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Debug trên Android Studio</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Cấu trúc dự án Android trên Android Studio</a></li>
+																	<li><a href="#"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Mini Task: Giải phương trình bậc 2, Tính tổng 100 số tự nhiên</a></li>
+																</ul>
+															</div >
+														</div>
+													</div>
+												</div>
 											</div>
-											<!-- // <script src="https://apis.google.com/js/plusone.js"> -->
-											<!-- </script> -->
-											<hr>
-
-											<!-- the comments -->
-											<h3><i class="fa fa-comment"></i> Nguyễn Văn Hải
-												<small> 9:41 PM on November 24, 2016</small>
-											</h3>
-											<p>Bài viết rất hay, và bổ ích, Thanks!</p>
-
-											<h3><i class="fa fa-comment"></i> Trịnh Huy Tuấn
-												<small> 10:47 PM on September 20, 2016</small>
-											</h3>
-											<p>Bài viết rất hay, và bổ ích, Thanks!</p>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading3">
+													<h4 class="panel-title">
+														<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 4: Giao diện người dùng trong Android (12 lesson)
+														</a>
+													</h4>
+												</div>
+												<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+													<div class="panel-body">
+														<div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading3">
+													<h4 class="panel-title">
+														<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 5: Giao diện người dùng trong Android (12 lesson)
+														</a>
+													</h4>
+												</div>
+												<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+													<div class="panel-body">
+														<div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading3">
+													<h4 class="panel-title">
+														<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Buổi 6: Giao diện người dùng trong Android (12 lesson)
+														</a>
+													</h4>
+												</div>
+												<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+													<div class="panel-body">
+														<div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
+
+
+
+									</div>
+									<div class="btndangkyngay">
+										<button type="button" class="btn btn-primary btn-lg " onclick="window.location.href='learnonline.html'">Học Ngay</button>
 									</div>
 
+								</div>
+
+								<!-- comment -->
+								<div class="comment">
+									<div class="">
+										<h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
+										<form role="form">
+											<div class="form-group">
+												<textarea class="form-control" rows="3"></textarea>
+											</div>
+											<button type="submit" class="btn btn-primary" ><i class="fa fa-reply"></i> Submit</button>
+										</form>
+									</div>
+									<!-- // <script src="https://apis.google.com/js/plusone.js"> -->
+									<!-- </script> -->
+									<hr>
+
+									<!-- the comments -->
+									<h3><i class="fa fa-comment"></i> Nguyễn Văn Hải
+										<small> 9:41 PM on November 24, 2016</small>
+									</h3>
+									<p>Bài viết rất hay, và bổ ích, Thanks!</p>
+
+									<h3><i class="fa fa-comment"></i> Trịnh Huy Tuấn
+										<small> 10:47 PM on September 20, 2016</small>
+									</h3>
+									<p>Bài viết rất hay, và bổ ích, Thanks!</p>
 								</div>
 							</div>
-							<footer>
-								<div class="row">
-									<div class="col-lg-12">
-											<div class="container">
-												<div class="col-lg-3">
-													<div class="cuadro_intro_hover " style="background-color:#cccccc;">
-														<p style="text-align:center; margin-top:20px;">
-															<img src="Images/learnPlan.png" class="img-responsive" alt="">
-														</p>
-														<div class="caption">
-															<div class="blur"></div>
-															<div class="caption-text">
-																<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">KHóa Học NodeJS</h3>
-																<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
-																<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
-															</div>
-														</div>
-													</div>
 
-												</div>
-												<div class="col-lg-3">
-													<div class="cuadro_intro_hover " style="background-color:#cccccc;">
-														<p style="text-align:center; margin-top:20px;">
-															<img src="Images/i2.jpg" class="img-responsive" alt="">
-														</p>
-														<div class="caption">
-															<div class="blur"></div>
-															<div class="caption-text">
-																<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">Ruby On Rails</h3>
-																<p>Nếu bạn không muốn thất nghiệp hãy rèn luyện 10 kỹ năng này...</p>
-																<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> ChiTiết</span></a>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg-3 col-md-6">
-													<h3>Categories:</h3>
-													<ul>
-														<li><a href=""><i class="fa fa-file"></i> News</a></li>
-														<li><a href=""><i class="fa fa-android"></i> Android</a></li>
-														<li><a href=""><i class="fa fa-code"></i> C#</a></li>
-														<li><a href=""><i class="fa fa-code"></i> Java</a></li>
-														<li><a href=""><i class="fa fa-book"></i> Books</a></li>
-														<li><a href=""><i class="fa fa-globe"></i> Web</a></li>
-														<li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
-													</ul>
-												</div>
+						</div>
+					</div>
+				</div>
+			</div>
+					<footer class="footer col-xs-12  ">
+						<div class="foot-content" >
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<ul>
+										<li><a href=""> <span >CodeHand</span></a></li>
+										<li><a href=""> <span>Giới Thiệu</span></a></li>
+										<li><a href=""> <span>Quy Định</span></a></li>
 
-												<div class="col-lg-3 col-md-6">
-													<h3>Follow:</h3>
-													<a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
-														<i class="fa fa-square-o fa-stack-2x"></i>
-														<i class="fa fa-facebook fa-stack-1x"></i>
-													</span>
-													Facebook</a>
-													<a href=""  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
-														<i class="fa fa-square-o fa-stack-2x"></i>
-														<i class="fa fa-github fa-stack-1x"></i>
-													</span>
-													GitHub</a>
-												</div>
-											</footer>
-											<script src="js/jquery-3.1.1.slim.min.js"></script>
-											<script src="js/bootstrap.min.js" ></script>
-											<script src="src/ace.js"></script>
-											<script >
+									</ul>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<ul class="iConFooter">
+										<li><a href=""><img src="Images/logoFacebook.png"></a></li>
+										<li><a href=""><img src="Images/logoGoogle.jpg"></a></li>
+										<li><a href=""><img src="Images/logoYoutube.png"></a></li>
+									</ul>
+								</div>	
+								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<ul>
+										<li><a href=""> <span>Về Chúng Tôi</span></a></li>
+										<li><a href=""> <span>Việc Làm</span></a></li>
+										<li><a href=""> <span>Cơ Sở Vật Chất</span></a></li>
 
-											$(function(){
+									</ul>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<ul>
+										<li><span>Liên Hệ</span></li>
+										<li><a href="">Địa Chỉ:Số 14, ngõ 4, Nguyễn Đình Chiểu, Hai Bà Trưng, Hà Nội</a>
+											<li>Mở cửa: 9:00 đến 18:00</li>
+											<li><a href="">Phòng 2304, tầng 23, toà nhà StarCity, 81 Lê Văn Lương, Nhân Chính, Thanh Xuân, Hà Nội</a></li>
+											Mở cửa: 9:00 đến 18:00</li>
+											<li>Mr.Thụy: 0968160693</li>
+											<li>Email:thuynv06@gmail.com </li>
+
+										</ul>					
+									</div>				
+								</div>
+							</div>
+						</footer>
+						<script src="js/jquery-3.1.1.slim.min.js"></script>
+						<script src="js/bootstrap.min.js" ></script>
+						<script src="src/ace.js"></script>
+						<script >
+
+						$(function(){
 
 
-											});	
+						});	
 
-			// document.getElementById('editor').resize();	
+// document.getElementById('editor').resize();	
 
-			</script>
-		</body>
-		</html>
+</script>
+</body>
+</html>

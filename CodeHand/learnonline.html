@@ -1,181 +1,312 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" href="css/bootstrap.css" >
-		<link rel="stylesheet" type="text/css" href="css/style.css" >
-		<link rel="stylesheet" type="text/css" href="css/profileuser.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="css/course.css" >
-		<link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen">
-
-		<!-- <linh rel="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
-		<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
-
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/BootSideMenu.css">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="css/style.css" >
+	<link rel="stylesheet" type="text/css" href="css/profileuser.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/course.css" >
+	<link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen">
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/BootSideMenu.css">
 
 
-		<style type="text/css">
-			body{
-				/*background-color: green;	*/
-			}
-		</style>
-		<script src="js/jquery-3.1.1.slim.min.js"></script>
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="js/bootstrap.min.js" ></script>
-		<script src="js/BootSideMenu.js"></script>
-		<script type="text/javascript">
-		$(document).ready(function(){
-		// $('#test').BootSideMenu({side:"left", autoClose:false});
-		$('#test').BootSideMenu({side:"left",autoClose:false});
-	});
-		</script>
 
-	</head>
-	<body>
+	<script src="js/jquery-3.1.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.min.js" ></script>
+	<script src="js/BootSideMenu.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+// $('#test').BootSideMenu({side:"left", autoClose:false});
+$('#test').BootSideMenu({side:"left",autoClose:true});
+});
+	</script>
 
-	</head>
+</head>
+<body>
 
-	<!-- <link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen"> -->
-	<body>
-		<div id="test">
-			<div class="user_tab">
-				<img src="Images/avatar.jpg" alt="Esempio" class="img-thumbnail">
-				<a href="profileuser.html" target="_blank" class="navbar-link">Nguyễn Văn Thụy</a>
-				<div class="out">
-					<a data-toggle="modal" data-target="#myModal" href="#">Đăng Xuất</a>
-				</div>
+</head>
+
+<!-- <link rel="stylesheet" type="text/css" href="css/codehand.css" media="screen"> -->
+<body>
+	<div id="test">
+		<div class="user_tab">
+			<img src="Images/avatar.jpg" alt="Esempio" class="img-thumbnail">
+			<a href="profileuser.html" target="_blank" class="navbar-link">Nguyễn Văn Thụy</a>
+			<div class="out">
+				<a data-toggle="modal" data-target="#myModal" href="#">Đăng Xuất</a>
 			</div>
-			<div class="slide-learn ">
-				<div class="tab_user">
+		</div>
+		<div class="slide-learn ">
+			<div class="tab_user col-xs-12">
+				<div style="text-algin:center">
 					<ul class="navigation setnav">
 						<li class="active" >
 							<a data-toggle="tab" href="#giaotrinh"><span class="fa fa-book fa-2x" aria-hidden="true"></span>  Giáo Trình
 							</a>
 						</li>
-						<li ><a data-toggle="tab" href="#mycourse"> <span class="fa fa-sticky-note fa-2x"></span> Ghi Chú</a></li>
+						<li ><a data-toggle="tab" href="#comment"> <span class="fa fa-sticky-note fa-2x"></span> Ghi Chú</a></li>
 						<li>
-							<a data-toggle="tab" href="#email"> <span class="fa fa-comments-o fa-2x"></span> Thảo Luận </a>
+							<a data-toggle="tab" href="#disscuss"> <span class="fa fa-comments-o fa-2x"></span> Thảo Luận </a>
 						</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#badge"><span class="fa fa-trophy fa-2x" aria-hidden="true"></span> Bảng Xếp Hạng</a>
+						<a data-toggle="tab" href="#xephang"><span class="fa fa-trophy fa-2x" aria-hidden="true"></span> Bảng Xếp Hạng</a>
 					</li>
 				</ul>
-				<div class="tab-content">
-					<div id="giaotrinh" class="tab-pane active slide-list">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Tổng Quan Về HTML</h3>
-								</div>
-								<ul class="list-group">
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span>   HTML là gi?</a>
-									<a href="" class="list-group-item active"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Ứng Dụng Đầu Tiên HTML</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> BT: Tạo 1 trang HTML đơn giản</a>
-								</ul>
-							</div>
-						
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Tổng Quan Về HTML</h3>
-								</div>
-								<ul class="list-group">
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span>   HTML là gi?</a>
-									<a href="" class="list-group-item active"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Ứng Dụng Đầu Tiên HTML</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> BT: Tạo 1 trang HTML đơn giản</a>
-								</ul>
-							</div>
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Tổng Quan Về HTML</h3>
-								</div>
-								<ul class="list-group">
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span>   HTML là gi?</a>
-									<a href="" class="list-group-item active"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Ứng Dụng Đầu Tiên HTML</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> BT: Tạo 1 trang HTML đơn giản</a>
-								</ul>
-							</div>
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Tổng Quan Về HTML</h3>
-								</div>
-								<ul class="list-group">
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span>   HTML là gi?</a>
-									<a href="" class="list-group-item active"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Ứng Dụng Đầu Tiên HTML</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> BT: Tạo 1 trang HTML đơn giản</a>
-								</ul>
-							</div>
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									Tổng Quan Về HTML</h3>
-								</div>
-								<ul class="list-group">
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span>   HTML là gi?</a>
-									<a href="" class="list-group-item active"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Ứng Dụng Đầu Tiên HTML</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"> <span><i class="fa fa-circle" aria-hidden="true"></i></span> Heading, Paragraph & Special characters</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> Các thẻ format text</a>
-									<a href="#" class="list-group-item"><span><i class="fa fa-circle" aria-hidden="true"></i></span> BT: Tạo 1 trang HTML đơn giản</a>
-								</ul>
-							</div>
-					</div>
-				</div>
-				</div>
-				
-
-				</div>
 			</div>
 		</div>
 	</div>
-	<!--/Test -->
 
+	<div class="tab-content col-xs-12 col-sm-12 col-md-12  col-lg-12">
+		<div id="giaotrinh" class="tab-pane active slide-list ">
+		</div>	
+		<!-- // tab xep hang -->
+		<div id="xephang" class="tab-pane  slide-list ">
+			<table class="table table-inbox table-hover">
+				<tbody>
+					<tr class="user-row">
+						<td class="td-style">1</td>
+						<td class="td-style">Nguyễn Văn Thụy</td>
+						<td class="td-style"></td>
+						<td class="td-style text-right"><div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								70%
+							</div>
+						</div></td>
+						<td class="td-style  text-right">
+							238/450</td>
+							<td class="huyhieu text-right"><img src="Images/huyhieu1.png"></td>
+						</tr>
+						<tr class="user-row">
+							<td class="td-style">2</td>
+							<td class="td-style">Nguyễn Văn Thiệu</td>
+							<td class="td-style"></td>
+							<td class="td-style text-right"><div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+									70%
+								</div>
+							</div></td>
+							<td class="td-style  text-right">
+								238/450</td>
+								<td class="huyhieu text-right"><img src="Images/huyhieu2.png"></td>
+							</tr>
+							<tr class="user-row">
+								<td class="td-style">3</td>
+								<td class="td-style">Pham Duy Anh</td>
+								<td class="td-style"></td>
+								<td class="td-style text-right"><div class="progress">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+										70%
+									</div>
+								</div></td>
+								<td class="td-style  text-right">
+									238/450</td>
+									<td class="huyhieu text-right"><img src="Images/huyhieu3.png"></td>
+								</tr>
+								<tr class="user-row">
+									<td class="td-style">3</td>
+									<td class="td-style">Trần Trung Nguyên</td>
+									<td class="td-style"></td>
+									<td class="td-style text-right"><div class="progress">
+										<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+											70%
+										</div>
+									</div></td>
+									<td class="td-style  text-right">
+										238/450</td>
+										<td class="huyhieu text-right"><img src="Images/huyhieu1.png"></td>
+									</tr>
+									<tr class="user-row">
+										<td class="td-style">4</td>
+										<td class="td-style">Nguyễn Thị Nhan</td>
+										<td class="td-style"></td>
+										<td class="td-style text-right"><div class="progress">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+												70%
+											</div>
+										</div></td>
+										<td class="td-style  text-right">
+											238/450</td>
+											<td class="huyhieu text-right"><img src="Images/huyhieu4.png"></td>
+										</tr>
+										<tr class="user-row">
+											<td class="td-style">5</td>
+											<td class="td-style">Trần Trung Nguyên</td>
+											<td class="td-style"></td>
+											<td class="td-style text-right"><div class="progress">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+													70%
+												</div>
+											</div></td>
+											<td class="td-style  text-right">
+												238/450</td>
+												<td class="huyhieu text-right"><img src="Images/huyhieu1.png"></td>
+											</tr>
+											<tr class="user-row">
+												<td class="td-style">6</td>
+												<td class="td-style">Trần Trung Nguyên</td>
+												<td class="td-style"></td>
+												<td class="td-style text-right"><div class="progress">
+													<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+														70%
+													</div>
+												</div></td>
+												<td class="td-style  text-right">
+													238/450</td>
+													<td class="huyhieu text-right"><img src="Images/huyhieu2.png"></td>
+												</tr>
+												<tr class="user-row">
+													<td class="td-style">7</td>
+													<td class="td-style">Lê Thành Đạt</td>
+													<td class="td-style"></td>
+													<td class="td-style text-right"><div class="progress">
+														<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+															70%
+														</div>
+													</div></td>
+													<td class="td-style  text-right">
+														238/450</td>
+														<td class="huyhieu text-right"><img src="Images/huyhieu4.png"></td>
+													</tr>
+													<tr class="user-row">
+														<td class="td-style">9</td>
+														<td class="td-style">Dương Thu Hương</td>
+														<td class="td-style"></td>
+														<td class="td-style text-right"><div class="progress">
+															<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																70%
+															</div>
+														</div></td>
+														<td class="td-style  text-right">
+															238/450</td>
+															<td class="huyhieu text-right"><img src="Images/huyhieu4.png"></td>
+														</tr>
+														<tr class="user-row">
+															<td class="td-style">10</td>
+															<td class="td-style">Đặng Trung Thành</td>
+															<td class="td-style"></td>
+															<td class="td-style text-right"><div class="progress">
+																<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																	70%
+																</div>
+															</div></td>
+															<td class="td-style  text-right">
+																238/450</td>
+																<td class="huyhieu text-right"><img src="Images/huyhieu3.png"></td>
+															</tr>
+															<tr class="user-row">
+																<td class="td-style">11</td>
+																<td class="td-style">Trần Trung Nguyên</td>
+																<td class="td-style"></td>
+																<td class="td-style text-right"><div class="progress">
+																	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																		70%
+																	</div>
+																</div></td>
+																<td class="td-style  text-right">
+																	238/450</td>
+																	<td class="huyhieu text-right"><img src="Images/huyhieu1.png"></td>
+																</tr>
+																<tr class="user-row">
+																	<td class="td-style">6</td>
+																	<td class="td-style">Trần Trung Nguyên</td>
+																	<td class="td-style"></td>
+																	<td class="td-style text-right"><div class="progress">
+																		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																			70%
+																		</div>
+																	</div></td>
+																	<td class="td-style  text-right">
+																		238/450</td>
+																		<td class="huyhieu text-right"><img src="Images/huyhieu2.png"></td>
+																	</tr>
+																	<tr class="user-row">
+																		<td class="td-style">12</td>
+																		<td class="td-style">Lê Thành Đạt</td>
+																		<td class="td-style"></td>
+																		<td class="td-style text-right"><div class="progress">
+																			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																				70%
+																			</div>
+																		</div></td>
+																		<td class="td-style  text-right">
+																			238/450</td>
+																			<td class="huyhieu text-right"><img src="Images/huyhieu4.png"></td>
+																		</tr>
+																		<tr class="user-row">
+																			<td class="td-style">13</td>
+																			<td class="td-style">Dương Thu Hương</td>
+																			<td class="td-style"></td>
+																			<td class="td-style text-right"><div class="progress">
+																				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																					70%
+																				</div>
+																			</div></td>
+																			<td class="td-style  text-right">
+																				238/450</td>
+																				<td class="huyhieu text-right"><img src="Images/huyhieu4.png"></td>
+																			</tr>
+																			<tr class="user-row">
+																				<td class="td-style">14</td>
+																				<td class="td-style">Đặng Trung Thành</td>
+																				<td class="td-style"></td>
+																				<td class="td-style text-right"><div class="progress">
+																					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+																						70%
+																					</div>
+																				</div></td>
+																				<td class="td-style  text-right">
+																					238/450</td>
+																					<td class="huyhieu text-right"><img src="Images/huyhieu3.png"></td>
+																				</tr>									
+					</tbody>
+				</table>
+			</div>
+			<!-- //tab comment	 -->
+		<div id="comment" class="tab-pane  slide-list ">
+			<p><b>Bài Tập</b></p>
+			<p>Tiếp tục hoàn thiện ứng dụng Memory Card. Khi người chơi chọn bài, kiểm tra xem có giống với lá bài trước đó không, nếu giống thì ẩn 2 lá bài đi, nếu khác thì úp ngược lại. Hành động úp bài và ẩn bài phải có thời gian delay để người chơi nhìn rõ quân bài.</p>
+			<p><b>Yêu Cầu</b></p>
+			<p> Quân bài nào đang ngửa thì không bấm vào được (tránh trường hợp người chơi chọn đi chọn lại 1 quân bài).<br>
+			- Có hiệu ứng âm thành và hình ảnh khi người chơi chọn đúng hoặc chọn sai.</p>	
+		<!-- //tab thao luan -->
+		</div>
+		<div id="disscuss" class="tab-pane  slide-list ">	
+			<!-- // tab ghi chú -->
+			<div class="well">
+				<h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
+				<form role="form">
+					<div class="form-group">
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
+				</form>
+			</div>
+			<!-- // <script src="https://apis.google.com/js/plusone.js"> -->
+			<!-- </script> -->
+			<hr>
+			<!-- the comments -->
+			<h3><i class="fa fa-comment"></i> Anonymous:
+				<small> 9:41 PM on November 24, 2016</small>
+			</h3>
+			<p>Anh ơi bài này trong vòng lặp ở function có đoạn code thêm nội dung vào trong content vậy thì toàn bộ nội dung trong content ( các class card, in front, back) có thể xoá bỏ được ạ ?</p>
+			<p>Thêm nội dung vào content thì phải giữ nguyên nội dung trong content, còn thay đổi toàn bộ nội dung content thì ban đầu để trống (ban đầu có nội dung thì cũng sẽ bị thay đổi)</p>
+
+			<h3><i class="fa fa-comment"></i> Anonymous:
+				<small> 10:47 PM on September 20, 2016</small>
+			</h3>
+			<p>Bài viết rất hay, và bổ ích, Thanks!</p>	
+<!-- // tab ghi chú -->
+		</div>			
+	</div>
+</div>
 	<div class="wrap-learn ">
 		<div class="row">
 			<div class="media col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
 			</div>
 			<div class="tab-learn col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="menu">
@@ -203,7 +334,7 @@
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="tab1">
 							<pre class="code" id="editor" >
-code here								
+								code here								
 							</pre>
 						</div>
 						<div class="tab-pane fade" id="tab2">
@@ -240,10 +371,7 @@ code here
 	function changeTheme(){
 		$('body').toggleClass('change');
 	}
-	$(function(){
 
-			// document.getElementById('editor').resize();	
-		});
 	</script>
 </body>
 </html>

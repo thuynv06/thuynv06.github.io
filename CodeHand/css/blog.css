@@ -9,7 +9,13 @@ body {
 .page-blog{
 	border-radius: 15px;
 	background-color: white;
+	margin-top: 20px;
 }
+.page-post{
+	margin-top: 20px;
+	border-radius: 15px;
+}
+
 .blog{
 	border-radius: 15px;
 	margin-top: 15px;
@@ -17,7 +23,10 @@ body {
 .post-slide {
 	margin: 0 15px;
 	position: relative;
-	background: #FFF;
+	/*background: #FFF;*/
+	margin-top: 20px;
+	border-radius: 15px;
+	
 
 }
 .post-slide .post-img {
@@ -150,6 +159,8 @@ body {
 	width: 21%;
 	margin-left: 20px;
 	background-color: white;
+			</div>
+	margin-top: 20px;
 }
 
 .vid {

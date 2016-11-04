@@ -1,6 +1,4 @@
-body {
-	background: rgba(0, 188, 212, 0.52);
-}
+
 .user{
 }
 .user-details {
@@ -89,8 +87,15 @@ body {
 .tab_user{
 	display: inline-block;
 	border: 1px solid #3F51B5;
+	font-size: 13px;
 	/*width: 100%;*/
-	margin: 10px 10px 10px 10px;
+	/*margin: 10px 10px 10px 10px;*/
+}
+.tab_user .navigation li a{
+	color: #2b3673;
+}
+.tab_user .navigation li.active a{
+	background-color: #d8d8d8;
 }
 #user-info{
 	display: inline-block;
