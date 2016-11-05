@@ -445,7 +445,7 @@
                 <div class="titlevideo">
                     <p>Object C</p>
                 </div>
-                <iframe id="myVideo" src="https://content.jwplatform.com/players/1kcDFqpO-l45hyimM.html" frameborder="0" scrolling="auto" allowfullscreen="" style="position:absolute;" width="650" height="450"></iframe>
+                <iframe id="myVideo" src="https://content.jwplatform.com/players/1kcDFqpO-l45hyimM.html" frameborder="0" scrolling="auto" allowfullscreen="" style="position:absolute;width:100%;min-height:450px;" width="650" height="450"></iframe>
             </div>
             <div class="tab-learn col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="menu">
@@ -539,9 +539,22 @@ function changeTheme(){
 
 
 <div class="debug-re col-xs-12">
-    <div class="menu">
-        <a class="btn btn-default" href="#" onclick="run()" role="button">Console</a>
-        <a class="btn btn-default" href="#" role="button">Result</a>
+    <div class="menu1">
+        <a class="btn btn-default" href="#" onclick="run()" role="button">Run</a>
+        <a class="btn btn-default" href="#" role="button">Console</a>
+    </div>
+    <div class="result" >
+        <iframe id="previewTarget">
+            <!DOCTYPE html>
+            <html lang ="en">
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+
+            </body>
+            </html>
+        </iframe>
     </div>              
 </div>
 <script src="src/ace.js"></script>
@@ -558,6 +571,7 @@ function changeTheme(){
             editor_javascript.getSession().setMode("ace/mode/javascript");
 
             function run() {
+                $('#test').BootSideMenu({side: "left", autoClose: true});
                 $('#previewTarget').contents().find('html').html('<style>' + editor_css.getValue() + '</style>' + (editor.getValue()));
                 document.getElementById('#previewTarget').contentWindow.eval(editor_javascript.getValue());
             }

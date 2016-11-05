@@ -66,6 +66,7 @@
 .user-info-block .user-body {
 	float: left; 
 	width: 100%;
+	background-color: #b2aeb9;
 }
 
 .user-body .tab-content > div {
@@ -86,10 +87,11 @@
 
 .table-user-information{
 	display: inline-block;
-	width: 30%;
+	width:auto;
 	position: relative;
-	text-align: center;
-	border: 2px solid #d0d0d0;
+	color: black;
+	/*text-align: center;*/
+	/*border: 2px solid #d0d0d0;*/
 }
 .tab_user{
 	display: inline-block;
