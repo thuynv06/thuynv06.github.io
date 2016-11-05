@@ -33,499 +33,713 @@
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
-							<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
+							<li><a data-toggle="modal"  onclick="runformregister()" href="#">Đăng Ký</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<div class="modal" id="myModal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<form class="form-signin mg-btm">
-							<h3 class="heading-desc">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								Đăng nhập vào CodeHand </h3>
-								<div class="social-box">
-									<div class="row mg-btm">
-										<div class="col-md-12">
-											<a href="#" class="btn btn-primary btn-block">
-												<i class="icon-facebook"></i>    Login with Facebook
-											</a>
-										</div>
+			<div  id="myModal" class="modal fade container" role="dialog">
+				<div class="row modal-dialog modal-lg">
+					<div class="col-md-6 col-md-offset-3 ">
+						<div class="panel panel-login">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<a href="#" class="active" id="login-form-link">Đăng Nhập</a>
 									</div>
-									<div class="row">
-										<div class="col-md-12">
-											<a href="#" class="btn btn-info btn-block" >
-												<i class="icon-twitter"></i>    Login with Google
-											</a>
-										</div>
+									<div class="col-xs-6">
+										<a href="#" id="register-form-link">Đăng Ký</a>
 									</div>
 								</div>
-								<div class="main">	
-
-									<input type="text" class="form-control" placeholder="Email" autofocus>
-									<input type="password" class="form-control" placeholder="Password">
-
-									<div class="checkbox">
-										<label>
-											<input name="remember" type="checkbox" value="Remember Me"> Ghi nhớ tài khoản
-										</label>
-									</div>
-									<button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
-								</div>
-								<div class="login-footer">
-									<div class="row">
-										<div >
-											<div class="left-section">
-												<a href="">Quên Mật Khẩu?</a>
-												<a data-toggle="modal" data-target="#myModal1" href="#">Đăng Kí Ngay</a>
+								<hr>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-12">
+										<form id="login-form" action="profileuser.html" method="post" role="form" style="display: block;">
+											<div class="form-group">
+												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 											</div>
-										</div>
-										<div >
-										</div>
+											<div class="form-group">
+												<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+											</div>
+											<div class="form-group text-center">
+												<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+												<label for="remember"> Ghi nhớ mật khấu</label>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-sm-6 col-sm-offset-3">
+														<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Đăng Nhập">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="text-center">
+															<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Quên Mật Khẩu?</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+										<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+											<div class="form-group">
+												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+											</div>
+											<div class="form-group">
+												<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+											</div>
+											<div class="form-group">
+												<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+											</div>
+											<div class="form-group">
+												<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-sm-6 col-sm-offset-3">
+														<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Đăng Ký">
+													</div>
+												</div>
+											</div>
+										</form>
 									</div>
 								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-				<div class="banner">
-					<div class="row">
-						<div class="left-header col-xs-12 col-sm-12 col-md-6 col-lg-7">
-							<!-- <img class="img-responsive" src="Images/logo.png" alt=""> -->
-							<div class="intro-text">
-								<span class="name">Flip Learning. Practice Coding<br>Join Project. Find Jobs</span>
-								<hr class="star-light">
-								<a href="#" class="btn btn-info	btn-lg">  Học Ngay  </a>
 							</div>
-						</div>
-						<div class="right-header col-xs-12 col-sm-12 col-md-6 col-lg-4">
-							<div class="introduce">
-								<h3>CodeHand</h3>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-			<div class="modal" id="myModal1">
-				<div class="container">
-					<div class="row main">
-						<div class="main-login main-center">
-							<div class="panel-title text-center">
-								<h1 class="title">CodeHand</h1>
-								<hr/>
-							</div>
-							<form class="form-horizontal" method="post" action="#">
-
-								<div class="form-group">
-									<label for="name" class="cols-sm-2 control-label">Your Name</label>
-									<div class="cols-sm-10">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-											<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label for="email" class="cols-sm-2 control-label">Your Email</label>
-									<div class="cols-sm-10">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-											<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label for="username" class="cols-sm-2 control-label">Username</label>
-									<div class="cols-sm-10">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-											<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label for="password" class="cols-sm-2 control-label">Password</label>
-									<div class="cols-sm-10">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-											<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-									<div class="cols-sm-10">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-											<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group ">
-									<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-								</div>
-								<div class="login-register">
-									<a href="index.php">Login</a>
-								</div>
-							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="wrap container">
-				<h2>Khóa Học Mới</h2>
-				<div class="khoahoc ">
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures">
-							<div class="cardIcon">
-								<a href="coursedetail.html"><img class="courseIcon" src="Images/logoC.png"></a>
+<!-- 			<div class="banner col-xs-12">
+				<div class="container">
+					<div class="row">
+						<div class="left-header col-xs-12 col-sm-12 col-md-6 col-lg-7">
+							<div class="intro-text">
+								<span class="name">Đôi Bàn Tay Làm Lên Tất Cả</span>
 							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
+							<div>
+								<button onclick="window.location.href='codehand.html'" class=" btn btn-danger footer-signup_button ">Đăng Ký Ngay</button>	
 							</div>
 						</div>
-					</div>
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures ">
-							<div class="cardIcon">
-								<a href="coursedetail.html">	<img class="courseIcon" src="Images/html_badge.png"></a>
-							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures ">
-							<div class="cardIcon">
-								<a href="coursedetail.html">	<img class="courseIcon" src="Images/php_badge.png"></a>
-							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
-							</div>
-						</div>
-					</div>						
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures ">
-							<div class="cardIcon">
-								<a href="coursedetail.html">	<img class="courseIcon" src="Images/java_badge.png"></a>
-							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
-							</div>
-						</div>
-					</div>						
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures ">
-							<div class="cardIcon">
-								<a href="coursedetail.html"><img class="courseIcon" src="Images/node_badge.png"></a>
-							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
-							</div>
-						</div>
-					</div>						
-					<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
-						<div class="boxCoures ">
-							<div class="cardIcon">
-								<a href="coursedetail.html"><img class="courseIcon" src="Images/python_badge.png"></a>
-							</div>
-							<div class="boxCourse-content">
-								<div class="discription">
-									<span class="title"> C++ Tutorial </span>
-									<h6>Giảng Viên: Trinh Minh Cuong</h6>
-									<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
-								</div>
-								<div class="btnMore">
-									<div>
-										<div class="stars">
-											<form action="star-4">
-												<input class="star star-5" id="star-5" type="radio" name="star"/>
-												<label class="star star-5" for="star-5"></label>
-												<input class="star star-4" id="star-4" type="radio" name="star"/>
-												<label class="star star-4" for="star-4"></label>
-												<input class="star star-3" id="star-3" type="radio" name="star"/>
-												<label class="star star-3" for="star-3"></label>
-												<input class="star star-2" id="star-2" type="radio" name="star"/>
-												<label class="star star-2" for="star-2"></label>
-												<input class="star star-1" id="star-1" type="radio" name="star"/>
-												<label class="star star-1" for="star-1"></label>
-											</form>
-										</div>
-										<br>
-									</div>
-									<div class="btnDetail">
-										<span class="price"> 1.000.000 đ</span>	
-										<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
-									</div>
-
-								</div>
-							</div>
-							<div class="boxCourse-footer">
-								<ul>
-									<li><span>Học viên</span><p>66666</p></li>
-									<li><span>Bài Giảng</span><p>66666</p></li>
-									<li><span>Quizess</span><p>66666</p></li>
-									<li><span>Bài Tập</span><p>66666</p></li>
-								</ul>
+						<div class="right-header col-xs-12 col-sm-12 col-md-6 col-lg-4">
+							<div class="introduce">
 							</div>
 						</div>
 					</div>					
+				</div>
+			</div> -->
+		</header>
+		<div class="head-backgroud col-xs-12">
+			<div class="container">
+				<div class="footer-signup">
+					<div>
+						<h1 class=" clearMargin footer-signup_main-header ">Đôi Bàn Tay Làm Lên Tất Cả</h1>
+					</div>
+					<div>
+						<button onclick="window.location.href='codehand.html'" class=" btn btn-danger footer-signup_button ">Đăng Ký Ngay</button>	
 					</div>
 				</div>
-				<footer class="footer col-xs-12  ">
-					<div class="foot-content" >
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<ul>
-									<li><a href=""> <span class="foot-text">CodeHand</span></a></li>
-									<li><a href=""> <span>Giới Thiệu</span></a></li>
-									<li><a href=""> <span>Quy Định</span></a></li>
 
-								</ul>
+			</div>
+		</div> 
+		<div class="blog-course container ">
+			
+			<div class="khoahoc col-xs-12">
+				<div>
+					<h2>Khóa Học Mới</h2>
+				</div>
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures">
+						<div class="cardIcon">
+							<a href="coursedetail.html"><img class="courseIcon" src="Images/logoC.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
 							</div>
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<ul class="iConFooter">
-									<li><a href=""><img src="Images/logoFacebook.png"></a></li>
-									<li><a href=""><img src="Images/logoGoogle.jpg"></a></li>
-									<li><a href=""><img src="Images/logoYoutube.png"></a></li>
-								</ul>
-							</div>	
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<ul>
-									<li><a href=""> <span>Về Chúng Tôi</span></a></li>
-									<li><a href=""> <span>Việc Làm</span></a></li>
-									<li><a href=""> <span>Cơ Sở Vật Chất</span></a></li>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
 
-								</ul>
-							</div>
-							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-								<ul>
-									<li><span>Liên Hệ</span></li>
-									<li><a href="">Địa Chỉ:Số 14, ngõ 4, Nguyễn Đình Chiểu, Hai Bà Trưng, Hà Nội</a>
-										<li>Mở cửa: 9:00 đến 18:00</li>
-										<li><a href="">Phòng 2304, tầng 23, toà nhà StarCity, 81 Lê Văn Lương, Nhân Chính, Thanh Xuân, Hà Nội</a></li>
-										Mở cửa: 9:00 đến 18:00</li>
-										<li>Mr.Thụy: 0968160693</li>
-										<li>Email:thuynv06@gmail.com </li>
-
-									</ul>					
-								</div>				
 							</div>
 						</div>
-					</footer>
-					<script src="js/jquery-3.1.1.slim.min.js"></script>
-					<script src="js/bootstrap.min.js" ></script>
-					<script >
-					$(function(){
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures ">
+						<div class="cardIcon">
+							<a href="coursedetail.html">	<img class="courseIcon" src="Images/html_badge.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
+							</div>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
 
-						$('#login-form-link').click(function(e) {
-							$("#login-form").delay(100).fadeIn(100);
-							$("#register-form").fadeOut(100);
-							$('#register-form-link').removeClass('active');
-							$(this).addClass('active');
-							e.preventDefault();
-						});
-						$('#register-form-link').click(function(e) {
-							$("#register-form").delay(100).fadeIn(100);
-							$("#login-form").fadeOut(100);
-							$('#login-form-link').removeClass('active');
-							$(this).addClass('active');
-							e.preventDefault();
-						});
+							</div>
+						</div>
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures ">
+						<div class="cardIcon">
+							<a href="coursedetail.html">	<img class="courseIcon" src="Images/php_badge.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
+							</div>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
 
-					});
-					</script>
+							</div>
+						</div>
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>						
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures ">
+						<div class="cardIcon">
+							<a href="coursedetail.html">	<img class="courseIcon" src="Images/java_badge.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
+							</div>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
+							</div>
+						</div>
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>						
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures ">
+						<div class="cardIcon">
+							<a href="coursedetail.html"><img class="courseIcon" src="Images/node_badge.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
+							</div>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
+
+							</div>
+						</div>
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>						
+				<div class="wrap-course col-xs-12 col-sm-12 col-md-6 col-lg-4"> 
+					<div class="boxCoures ">
+						<div class="cardIcon">
+							<a href="coursedetail.html"><img class="courseIcon" src="Images/python_badge.png"></a>
+						</div>
+						<div class="boxCourse-content">
+							<div class="discription">
+								<span class="title"> C++ Tutorial </span>
+								<h6>Giảng Viên: Trinh Minh Cuong</h6>
+								<p>I am a very simple card. I am good at containing small bits of information.I am a very simple card. I am good at containing small bits of information</p>
+							</div>
+							<div class="btnMore">
+								<div>
+									<div class="stars">
+										<form action="star-4">
+											<input class="star star-5" id="star-5" type="radio" name="star"/>
+											<label class="star star-5" for="star-5"></label>
+											<input class="star star-4" id="star-4" type="radio" name="star"/>
+											<label class="star star-4" for="star-4"></label>
+											<input class="star star-3" id="star-3" type="radio" name="star"/>
+											<label class="star star-3" for="star-3"></label>
+											<input class="star star-2" id="star-2" type="radio" name="star"/>
+											<label class="star star-2" for="star-2"></label>
+											<input class="star star-1" id="star-1" type="radio" name="star"/>
+											<label class="star star-1" for="star-1"></label>
+										</form>
+									</div>
+									<br>
+								</div>
+								<div class="btnDetail">
+									<span class="price"> 1.000.000 đ</span>	
+									<button class="btn btn-default orange-circle-button" onclick="window.location.href='coursedetail.html'">Chi<br />Tiết<br /><span class="orange-circle-greater-than">></span></button>
+								</div>
+
+							</div>
+						</div>
+						<div class="boxCourse-footer">
+							<ul>
+								<li><span>Học viên</span><p>66666</p></li>
+								<li><span>Bài Giảng</span><p>66666</p></li>
+								<li><span>Quizess</span><p>66666</p></li>
+								<li><span>Bài Tập</span><p>66666</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="blog-how col-xs-12">
+			<div class="container">
+				<div class="vertical-info">
+					<h2 >
+						Học tại CodeHand như thế nào?
+					</h2>
+					<p class="vertical-info_text">Tìm hiểu cách chúng tôi dạy và học viên đã thành công như thế nào!
+					</p>
+				</div>
+				<div class="row row-margin-bottom">
+					<div class="col-xs-12 no-padding lib-item" data-category="view">
+						<div class="lib-panel">
+							<div class="row box-shadow">
+								<div class="col-lg-3">
+									<img class="lib-img-show" src="Images/info-1.png">
+								</div>
+								<div class="col-lg-9">
+									<div class="lib-row lib-header">
+										Học thực tế
+										<div class="lib-header-seperator"></div>
+									</div>
+									<div class="lib-row lib-desc">
+										Học từng bước một theo video bài giảng chỉ dẫn.Các video bài giảng bám sát công nghệ hiện tại.Cùng với
+										những câu hỏi theo bài học giúp học viên luyện tập. Hỏi đáp thảo luận ngay lập tức...
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diliver-circle">
+					<i class="fa fa-circle-o" aria-hidden="true"></i><br>
+					<i class="fa fa-circle" aria-hidden="true"></i><br>
+					<i class="fa fa-circle-o" aria-hidden="true"></i>
+				</div>
+				<div class="row row-margin-bottom">
+					<div class="col-xs-12 no-padding lib-item" data-category="view">
+						<div class="lib-panel">
+							<div class="row box-shadow">
+								<div class="col-lg-9">
+									<div class="lib-row lib-header">
+										Xây dựng và Code đề tài thực tế
+										<div class="lib-header-seperator"></div>
+									</div>
+									<div class="lib-row lib-desc">
+										Bạn sẽ tự xây dựng app đơn giản hoặc trang web. Nhưng công việc phải thực hiện với tiến độ
+										như làm với dự án thực tế.Bạn sẽ phải trình bày trước mọi người và tương lai sẽ trở thành người lao động kiếm ra tiền.
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<img class="lib-img-show" src="Images/info-2.png">
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diliver-circle">
+					<i class="fa fa-circle-o" aria-hidden="true"></i><br>
+					<i class="fa fa-circle" aria-hidden="true"></i><br>
+					<i class="fa fa-circle-o" aria-hidden="true"></i>
+				</div>
+				<div class="row row-margin-bottom">
+					<div class="col-xs-12 no-padding lib-item" data-category="view">
+						<div class="lib-panel">
+							<div class="row box-shadow">
+								<div class="col-lg-3">
+									<img class="lib-img-show" src="Images/info-3.png">
+								</div>
+								<div class="col-lg-9">
+									<div class="lib-row lib-header">
+										Đạt tới mục tiêu của bạ<n!></n!>
+										<div class="lib-header-seperator"></div>
+									</div>
+									<div class="lib-row lib-desc">
+										Bạn làm việc bạn hằng mơ ước, Bắt đầu một công ty công nghệ của riêng mình, hoặc xây dựng công nghệ làm thay đổi thế giới, CodeHand là để dành riêng giúp bạn đạt được điều đó nhanh hơn!
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+
+		<div class="blog-product container">
+			<div class="row">
+
+				<div class="col-xs-12">
+					<div >
+						<h2>
+							Sản phẩm nổi bật của học viên
+						</h2>
+					</div>
+					<div class="container-fluid">
+						<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>            
+								</div> 
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>            
+								</div> 
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>           
+								</div>
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>            
+								</div> 
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>            
+								</div> 
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>           
+								</div>
+								<div class="item">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="top col-md-6 col-xs-12"><img src="Images/p2.png" class="img-responsive"></div>
+											<div class="content col-md-6 col-xs-12">
+												<h2>Đề tài: Thiết kế website Học lập trình trực tuyến</h2>
+												<p>Đề tài: Thiết kế website Học lập trình trực tuyến<br>
+													Mô tả<br>
+													- Người dùng tham gia các khóa học online về lập trình, code trực tiếp trên website.<br>
+													- Một số phần khóa học sẽ phải bỏ tiền ra mua (ví dụ nâng cấp gói khóa học để xem được nhiều hơn)<br>
+													- Hoàn thành khóa học sẽ được cấp chứng chỉ, huy hiệu, ...
+												</p>
+											</div>
+										</div>
+									</div>           
+								</div>
+
+								<!-- End Item -->
+							</div>
+							<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
+							<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
+							<!-- End Carousel Inner -->
+						</div>
+					</div>					<!--Card-->
+				</div>
+			</div>
+		</div>
+		<div class="foot-backgroud col-xs-12">
+			<div class="container">
+				<div class="footer-signup">
+					<div>
+						<h1 class=" clearMargin footer-signup_main-header ">Bắt Đầu Code Ngay Từ Hôm Nay</h1>
+					</div>
+					<div>
+						<button onclick="window.location.href='codehand.html'" class=" btn btn-danger footer-signup_button ">Code Now</button>	
+					</div>
+				</div>
+
+			</div>
+		</div> 
+		<footer class="footer col-xs-12">
+			<div class="foot-content" >
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<ul>
+							<li><a href=""> <span class="foot-text">CodeHand</span></a></li>
+							<li><a href=""> <span>Giới Thiệu</span></a></li>
+							<li><a href=""> <span>Quy Định</span></a></li>
+
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<ul class="iConFooter">
+							<li><a href=""><img src="Images/logoFacebook.png"></a></li>
+							<li><a href=""><img src="Images/logoGoogle.jpg"></a></li>
+							<li><a href=""><img src="Images/logoYoutube.png"></a></li>
+						</ul>
+					</div>	
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<ul>
+							<li><a href=""> <span>Về Chúng Tôi</span></a></li>
+							<li><a href=""> <span>Việc Làm</span></a></li>
+							<li><a href=""> <span>Cơ Sở Vật Chất</span></a></li>
+
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<ul>
+							<li><span>Liên Hệ</span></li>
+							<li><a href="">Địa Chỉ:Số 14, ngõ 4, Nguyễn Đình Chiểu, Hai Bà Trưng, Hà Nội</a>
+								<li>Mở cửa: 9:00 đến 18:00</li>
+								<li><a href="">Phòng 2304, tầng 23, toà nhà StarCity, 81 Lê Văn Lương, Nhân Chính, Thanh Xuân, Hà Nội</a></li>
+								Mở cửa: 9:00 đến 18:00</li>
+								<li>Mr.Thụy: 0968160693</li>
+								<li>Email:thuynv06@gmail.com </li>
+
+							</ul>					
+						</div>				
+					</div>
+				</div>
+			</footer>
+			<script src="js/jquery-3.1.1.slim.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+			<script src="js/bootstrap.min.js" ></script>
+			<script >
+			function runformregister(){
+				$('#myModal').show();
+
+			}
+			$(function() {
+
+				$('#login-form-link').click(function(e) {
+					$("#login-form").delay(100).fadeIn(100);
+					$("#register-form").fadeOut(100);
+					$('#register-form-link').removeClass('active');
+					$(this).addClass('active');
+					e.preventDefault();
+				});
+				$('#register-form-link').click(function(e) {
+					$("#register-form").delay(100).fadeIn(100);
+					$("#login-form").fadeOut(100);
+					$('#login-form-link').removeClass('active');
+					$(this).addClass('active');
+					e.preventDefault();
+				});
+				var items = $(".nav li").length;
+				var leftRight=0;
+				if(items>5){
+					leftRight=(items-5)*50*-1;
+				}
+				$('#custom_carousel').on('slide.bs.carousel', function (evt) {
 
 
+					$('#custom_carousel .controls li.active').removeClass('active');
+					$('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+				})
 
-				</body>
-				</html>
+
+			});
+			</script>
+		</body>
+		</html>

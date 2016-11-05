@@ -68,21 +68,64 @@
 									<div class="tab-content">
 										<div class="tab-pane fade in active" id="tab1">
 											<pre class="code" id="editor" >
-												
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;body&gt;
+			&lt;p&gt;
+				somthings text!
+			&lt;/p&gt;
+		&lt;/body&gt;
+	&lt;/head&gt;
+&lt;/html&gt;										
+																					
 											</pre>
 										</div>
 
 										<div class="tab-pane fade" id="tab2">
 											<pre class="code" id="editor1" >
-							<!-- 					function foo(items) {
-												var x = "All this is syntax highlighted";
-												return x;
-											}	 -->		
+body {
+  background-color: rgba(158, 158, 158, 0.41);
+}
+#logo{
+  width: 140px;
+  max-height: 51px;
+  margin-left: 20px;
+}
+.navbar-default{
+  height: 77px;
+  background-color:#616db3;
+}
+.banner{
+  height: 400px;
+  background-color: #282d4a;
+}
+.left-header{
+  padding: 90px;
+  color: white;
+  text-align: center;
+}	
 										</pre>
 										</div>
 										<div class="tab-pane fade" id="tab3">
 											<pre class="code" id="editor2" >
-												
+document.getElementById('editor').style.fontSize='14px';
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/html");
+var editor_css = ace.edit("editor1");
+editor_css.setTheme("ace/theme/merbivore");
+editor_css.getSession().setMode("ace/mode/css");
+var editor_javascript = ace.edit("editor2");
+editor_javascript.setTheme("ace/theme/monokai");
+editor_javascript.getSession().setMode("ace/mode/javascript");
+
+function run() {
+	$('#previewTarget').contents().find('html').html('<style>'+editor_css.getValue() + '</style>'+(editor.getValue()));
+	document.getElementById('#previewTarget').contentWindow.eval(editor_javascript.getValue());
+}
+function changeTheme(){
+	$('body').toggleClass('change');
+}												
 											</pre>
 										</div>
 								</div>

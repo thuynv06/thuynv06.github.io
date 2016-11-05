@@ -6,11 +6,7 @@
 .main-course{
 	margin-top: 20px;
 }
-#logo{
-	width: 140px;
-	max-height: 51px;
-	margin-left: 10px;
-}
+
 .wrap-course{
 	margin-top: 30px;
 	position: relative;
@@ -19,7 +15,7 @@
 .tabCourse{
 	margin-top: 73px;
 	/*height: 300px;*/
-	border: 2px solid #2196F3;
+	border: 2px solid #616db3;
 	background-color: white;
 	border-radius: 15px;
 }
@@ -30,7 +26,7 @@
 	float: left;
 	/*height: 280px;*/
 	/*margin: 0px 5px 0px 5px;*/
-	border: 2px solid #2196F3;
+	/*border: 2px solid #616db3;*/
 	overflow: hidden;
 	background-color: white;
 	border-radius: 15px;
@@ -58,9 +54,9 @@
 	margin: 10px 15px 0px 10px;
 	display: block;
 }
-.boxCourse .nav > li > a{
+/*.boxCourse .nav > li > a{
 	color: black;
-}
+}*/
 .boxCourse-footer {
 	text-align: center;
 	border-top: 1px solid #1a237e;
@@ -189,15 +185,17 @@ h5{
 	text-align: center;
 }
 .wrap-learn{
+	margin-top: 30px;
 	/*height: 100px;*/
 
 }
 .media{
-	height: 500px;
-	border: 1px solid black;
+	height: 452px;
+	/*border: 1px solid black;*/
 }
 .tab-learn{
 	/*background-color: #ff5722;*/
+	max-height: 400px;
 }
 .slide-learn{
 	/*text-align: center;*/
@@ -210,6 +208,10 @@ h5{
 	padding:5px;
 	background-color: #616db3;
 	margin-bottom: 10px;
+}
+.debug-re{
+	height: 300px;
+	border: 1px solid #616db3;
 }
 .user_tab img{
 	max-height: 80px;
