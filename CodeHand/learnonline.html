@@ -11,9 +11,7 @@
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/BootSideMenu.css">
- 	<link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
-    <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
-    <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
+
 	<script src="js/jquery-3.1.1.slim.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="js/bootstrap.min.js" ></script>
@@ -52,9 +50,8 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-
-		<div class="tab-content col-xs-12 col-sm-12 col-md-12  col-lg-12">
+			</div>
+			<div class="tab-content col-xs-12 col-sm-12 col-md-12  col-lg-12">
 			<div id="giaotrinh" class="tab-pane active slide-list ">
 			</div>	
 			<!-- // tab xep hang -->
@@ -316,7 +313,6 @@
 							</ul>
 						</div>
 						<div class="setting">
-
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HTML/CSS/JS
 								<span class="caret"></span>
 							</button>
@@ -328,10 +324,10 @@
 							<a id="btnTheme" class="btn btn-default" role="button" onclick="changeTheme()">ChangeTheme</a>
 						</div>
 					</div>
-					<div class="workspace">
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="tab1">
-									<pre class="code" id="editor" >
+								<div class="workspace">
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane fade in active" id="tab1">
+											<pre class="code" id="editor" >
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;body&gt;
@@ -340,18 +336,38 @@
 			&lt;/p&gt;
 		&lt;/body&gt;
 	&lt;/head&gt;
-&lt;/html&gt;								
-									</pre>
-							</div>
-							<div class="tab-pane fade" id="tab2">
-								<pre class="code" id="editor1" >
-p{
-	color:green;
+&lt;/html&gt;										
+																					
+											</pre>
+										</div>
+
+										<div role="tabpanel" class="tab-pane fade" id="tab2">
+											<pre class="code" id="editor1" >
+body {
+  background-color: rgba(158, 158, 158, 0.41);
 }
-								</pre>
-							</div>
-							<div class="tab-pane fade" id="tab3">
-								<pre class="code" id="editor2" >
+#logo{
+  width: 140px;
+  max-height: 51px;
+  margin-left: 20px;
+}
+.navbar-default{
+  height: 77px;
+  background-color:#616db3;
+}
+.banner{
+  height: 400px;
+  background-color: #282d4a;
+}
+.left-header{
+  padding: 90px;
+  color: white;
+  text-align: center;
+}	
+											</pre>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="tab3">
+											<pre class="code" id="editor2" >
 document.getElementById('editor').style.fontSize='14px';
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
@@ -369,14 +385,21 @@ function run() {
 }
 function changeTheme(){
 	$('body').toggleClass('change');
-}
-								</pre>
+}												
+											</pre>
+										</div>
+								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
-			<div class="row">
+				</div>
+			</div>
+		</div>
+				
+		<div class="row">
 				<div class="debug-re col-xs-12">
 					<div class="menu">
 						<a class="btn btn-default" href="#" onclick="run()" role="button">Console</a>
@@ -384,7 +407,6 @@ function changeTheme(){
 					</div>				
 				</div>
 		</div>
-
 		<script src="src/ace.js"></script>
 		<script >
 		document.getElementById('editor').style.fontSize='14px';
