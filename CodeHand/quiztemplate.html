@@ -29,23 +29,92 @@
 						<ul class="nav navbar-nav">
 							<li ><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
 							<li ><a href="course.html">Khóa Học</a></li>
-							<li ><a href="codehand.html">CodeHand</a></li>
+							<li ><a href="learnonline.html">CodeHand</a></li>
 							<li class="active"><a href="quiz.html">Quizzes</a></li>
 							<li><a href="blog.html">Blog</a></li>
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
-							<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
-							<li><a data-toggle="modal" data-target="#myModal1" href="#">Đăng Ký</a></li>
+							<li><a id="login" data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
+							<li><a id="regis" data-toggle="modal" data-target="#myModal"  href="">Đăng Ký</a></li>
 						</ul>
-						<form class="navbar-form navbar-right" role="search">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="tìm kiếm...">
-							</div>
-							<button type="submit" class="btn btn-default">Tìm Kiếm</button>
-						</form>
 					</div>
 				</div>
+			</nav>
+			<div  id="myModal" class="modal fade " role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="col-md-6 col-md-offset-3 ">
+						<div class="panel panel-login">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-6">
+										<a href="" class="active" id="login-form-link">Đăng Nhập</a>
+									</div>
+									<div class="col-xs-6">
+										<a href="#" id="register-form-link">Đăng Ký</a>
+									</div>
+								</div>
+								<hr>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-12">
+										<form id="login-form" action="profileuser.html" method="post" role="form" style="display: block;">
+											<div class="form-group">
+												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+											</div>
+											<div class="form-group">
+												<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+											</div>
+											<div class="form-group text-center">
+												<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+												<label for="remember"> Ghi nhớ mật khấu</label>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-sm-6 col-sm-offset-3">
+														<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Đăng Nhập" href="profileuser.html">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="text-center">
+															<a href="" tabindex="5" class="forgot-password">Quên Mật Khẩu?</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+										<form id="register-form"  action="" method="post" role="form" style="display: none;">
+											<div class="form-group">
+												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+											</div>
+											<div class="form-group">
+												<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+											</div>
+											<div class="form-group">
+												<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+											</div>
+											<div class="form-group">
+												<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-sm-6 col-sm-offset-3">
+														<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register"  value="Đăng Ký">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			</nav>
 		</header>
 		<div class="container">
@@ -77,8 +146,13 @@
 						</div>
 						<span id="answer"></span>
 					</div>
+				</div>
+				<div class="paper-test">
+					<div class="title">
+						<h3>HTML Basic Test</h3>
+					</div>
 					<div class="boxquiz">
-						<h3><span class="label label-warning" id="qid">2</span> THREE is CORRECT</h3>
+						<h3><span class="label label-warning" id="qid">2</span> Đoạn code sau sẽ hiển thị lên trình duyệt như thế nào:</h3>
 						<hr>
 						<div class="col-xs-3 col-xs-offset-5">
 							<div id="loadbar" style="display: none;">
@@ -92,12 +166,67 @@
 								<div class="blockG" id="rotateG_08"></div>
 							</div>
 						</div>
-
 						<div class="quiz" id="quiz" data-toggle="buttons">
-							<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">1 One</label>
-							<label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">2 Two</label>
-							<label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">3 Three</label>
-							<label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
+							<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> Hello Hell</label>
+							<label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Hello World </label>
+							<label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Hello Hell</label>
+							<label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Hello Hell</label>
+						</div>
+						<span id="answer"></span>
+					</div>
+				</div>
+				<div class="paper-test">
+					<div class="title">
+						<h3>HTML Basic Test</h3>
+					</div>
+					<div class="boxquiz">
+						<h3><span class="label label-warning" id="qid">13</span> Đoạn code sau sẽ hiển thị lên trình duyệt như thế nào:</h3>
+						<hr>
+						<div class="col-xs-3 col-xs-offset-5">
+							<div id="loadbar" style="display: none;">
+								<div class="blockG" id="rotateG_01"></div>
+								<div class="blockG" id="rotateG_02"></div>
+								<div class="blockG" id="rotateG_03"></div>
+								<div class="blockG" id="rotateG_04"></div>
+								<div class="blockG" id="rotateG_05"></div>
+								<div class="blockG" id="rotateG_06"></div>
+								<div class="blockG" id="rotateG_07"></div>
+								<div class="blockG" id="rotateG_08"></div>
+							</div>
+						</div>
+						<div class="quiz" id="quiz" data-toggle="buttons">
+							<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> Hello Hell</label>
+							<label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Hello World </label>
+							<label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Hello Hell</label>
+							<label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Hello Hell</label>
+						</div>
+						<span id="answer"></span>
+					</div>
+				</div>
+				<div class="paper-test">
+					<div class="title">
+						<h3>HTML Basic Test</h3>
+					</div>
+					<div class="boxquiz">
+						<h3><span class="label label-warning" id="qid">1</span> Đoạn code sau sẽ hiển thị lên trình duyệt như thế nào:</h3>
+						<hr>
+						<div class="col-xs-3 col-xs-offset-5">
+							<div id="loadbar" style="display: none;">
+								<div class="blockG" id="rotateG_01"></div>
+								<div class="blockG" id="rotateG_02"></div>
+								<div class="blockG" id="rotateG_03"></div>
+								<div class="blockG" id="rotateG_04"></div>
+								<div class="blockG" id="rotateG_05"></div>
+								<div class="blockG" id="rotateG_06"></div>
+								<div class="blockG" id="rotateG_07"></div>
+								<div class="blockG" id="rotateG_08"></div>
+							</div>
+						</div>
+						<div class="quiz" id="quiz" data-toggle="buttons">
+							<label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> Hello Hell</label>
+							<label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">Hello World </label>
+							<label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">Hello Hell</label>
+							<label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">Hello Hell</label>
 						</div>
 						<span id="answer"></span>
 					</div>
@@ -106,12 +235,40 @@
 		</div>
 
 		<script src="js/jquery-3.1.1.slim.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="js/bootstrap.min.js" ></script>
 		<script src="src/ace.js"></script>
 		<script >
 
 		$(function(){
-
+				$('#login').click(function(e) {
+					$("#login-form").delay(100).fadeIn(100);
+					$("#register-form").fadeOut(100);
+					$('#register-form-link').removeClass('active');
+					$('#login-form-link').addClass('active');
+					e.preventDefault();
+				});
+				$('#login-form-link').click(function(e) {
+					$("#login-form").delay(100).fadeIn(100);
+					$("#register-form").fadeOut(100);
+					$('#register-form-link').removeClass('active');
+					$('#login-form-link').addClass('active');
+					e.preventDefault();
+				});
+				$('#register-form-link').click(function(e) {
+					$("#register-form").delay(100).fadeIn(100);
+					$("#login-form").fadeOut(100);
+					$('#login-form-link').removeClass('active');
+					$('#register-form-link').addClass('active');
+					e.preventDefault();
+				});
+				$('#regis').click(function(e) {
+					$('#register-form-link').addClass('active');
+					$("#register-form").delay(100).fadeIn(100);
+					$("#login-form").fadeOut(100);
+					$('#login-form-link').removeClass('active');
+					e.preventDefault();
+				});
 			var loading = $('#loadbar').hide();
 			$(document)
 			.ajaxStart(function () {

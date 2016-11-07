@@ -27,25 +27,25 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="index.html">Trang Chủ <span class="sr-only">(current)</span></a></li>
 							<li><a href="course.html">Khóa Học</a></li>
-							<li><a href="codehand.html">Codehand</a></li>
+							<li><a href="learnonline.html">Codehand</a></li>
 							<li><a href="quiz.html">Quizzes</a></li>
 							<li><a href="blog.html">Blog</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
-							<li><a data-toggle="modal"  onclick="runformregister()" href="#">Đăng Ký</a></li>
+							<li><a id="login" data-toggle="modal" data-target="#myModal" href="#">Đăng Nhập</a></li>
+							<li><a id="regis" data-toggle="modal" data-target="#myModal"  href="">Đăng Ký</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<div  id="myModal" class="modal fade container" role="dialog">
-				<div class="row modal-dialog modal-lg">
+			<div  id="myModal" class="modal fade " role="dialog">
+				<div class="modal-dialog modal-lg">
 					<div class="col-md-6 col-md-offset-3 ">
 						<div class="panel panel-login">
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-xs-6">
-										<a href="profileuser.html" class="active" id="login-form-link">Đăng Nhập</a>
+										<a href="" class="active" id="login-form-link">Đăng Nhập</a>
 									</div>
 									<div class="col-xs-6">
 										<a href="#" id="register-form-link">Đăng Ký</a>
@@ -70,7 +70,7 @@
 											<div class="form-group">
 												<div class="row">
 													<div class="col-sm-6 col-sm-offset-3">
-														<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Đăng Nhập">
+														<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Đăng Nhập" href="profileuser.html">
 													</div>
 												</div>
 											</div>
@@ -84,7 +84,7 @@
 												</div>
 											</div>
 										</form>
-										<form id="register-form" action="" method="post" role="form" style="display: none;">
+										<form id="register-form"  action="" method="post" role="form" style="display: none;">
 											<div class="form-group">
 												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 											</div>
@@ -100,7 +100,7 @@
 											<div class="form-group">
 												<div class="row">
 													<div class="col-sm-6 col-sm-offset-3">
-														<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Đăng Ký">
+														<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register"  value="Đăng Ký">
 													</div>
 												</div>
 											</div>
@@ -112,24 +112,7 @@
 					</div>
 				</div>
 			</div>
-<!-- 			<div class="banner col-xs-12">
-				<div class="container">
-					<div class="row">
-						<div class="left-header col-xs-12 col-sm-12 col-md-6 col-lg-7">
-							<div class="intro-text">
-								<span class="name">Đôi Bàn Tay Làm Lên Tất Cả</span>
-							</div>
-							<div>
-								<button onclick="window.location.href='codehand.html'" class=" btn btn-danger footer-signup_button ">Đăng Ký Ngay</button>	
-							</div>
-						</div>
-						<div class="right-header col-xs-12 col-sm-12 col-md-6 col-lg-4">
-							<div class="introduce">
-							</div>
-						</div>
-					</div>					
-				</div>
-			</div> -->
+
 		</header>
 		<div class="head-backgroud col-xs-12">
 			<div class="container">
@@ -705,25 +688,34 @@
 			<script src="js/jquery-3.1.1.slim.min.js"></script>
 			<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 			<script src="js/bootstrap.min.js" ></script>
-			<script >
-			function runformregister(){
-				$('#myModal').show();
-
-			}
+			<script>
 			$(function() {
-
+				$('#login').click(function(e) {
+					$("#login-form").delay(100).fadeIn(100);
+					$("#register-form").fadeOut(100);
+					$('#register-form-link').removeClass('active');
+					$('#login-form-link').addClass('active');
+					e.preventDefault();
+				});
 				$('#login-form-link').click(function(e) {
 					$("#login-form").delay(100).fadeIn(100);
 					$("#register-form").fadeOut(100);
 					$('#register-form-link').removeClass('active');
-					$(this).addClass('active');
+					$('#login-form-link').addClass('active');
 					e.preventDefault();
 				});
 				$('#register-form-link').click(function(e) {
 					$("#register-form").delay(100).fadeIn(100);
 					$("#login-form").fadeOut(100);
 					$('#login-form-link').removeClass('active');
-					$(this).addClass('active');
+					$('#register-form-link').addClass('active');
+					e.preventDefault();
+				});
+				$('#regis').click(function(e) {
+					$('#register-form-link').addClass('active');
+					$("#register-form").delay(100).fadeIn(100);
+					$("#login-form").fadeOut(100);
+					$('#login-form-link').removeClass('active');
 					e.preventDefault();
 				});
 				var items = $(".nav li").length;
@@ -731,6 +723,7 @@
 				if(items>5){
 					leftRight=(items-5)*50*-1;
 				}
+
 				$('#custom_carousel').on('slide.bs.carousel', function (evt) {
 
 
