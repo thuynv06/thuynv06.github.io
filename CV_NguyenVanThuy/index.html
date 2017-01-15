@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3> Hướng Dẫn Xây Dựng Ứng Dụng Todo List Đơn Giản Bằng NodeJS </h3>
+					<h6>Tác giả: Nguyễn Văn Thụy</h6>
+					<h6>Học viên thực tập Nodejs - Techmaster.vn</h6>
+				</section>
+				<section><h3>Phân tích ứng dụng Todo List</h3>
+					<!--<p>Ứng dụng giúp người dùng quản lý các công việc cần làm trong cuộc sống hàng ngày</p>-->
+					<p> Chức Năng Ứng Dụng:</p>
+					<ul>
+						<li>Thêm Mới Công Việc
+						</li>
+						<li>Chỉnh Sửa Công Việc</li>
+						<li>Thay đổi trang thái công việc (done)</li>
+						<li>Xóa công việc</li>
+						<li>Tìm Kiếm Công Việc</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Phác Họa Ứng Dụng</h3>
+					<h5>Vẽ moqkup giao diện</h5>
+					<img src="Images/Selection_001.png">
+				</section>
+				<section>
+					<h6>Các Bước Thực Hiện</h6>
+					<ul>
+						<li>Tạo bảng cơ sở dữ liệu Todo - Sử dụng Postgresql </li>
+						<li>Viết trang html tĩnh giao diện demo</li>
+						<li>Tạo ứng dụng Webserver NodeJS kết nối CSDL</li>
+						<li>Viết các router xử lý các chức năng</li>
+					</ul>
+				</section>
+				<section>
+					<h6>Bước 1: Tạo bảng cơ sở dữ liệu Todo</h6>
+					<ul>
+						<li>Công cụ xây dựng CSDL: Postgresql,phần mềm PgAdmin</li>
+						<li>Hoặc sử dụng Module Sequelize kết nối và tạo bảng cơ sở dữ liệu</li>
+					</ul>
+					<h5>Cấu trúc bảng todo:</h5>
+					<ul>
+						<li>Columns: Id(INTEGER) :Khóa chính</li>
+						<li>Columns: todo(text): tên công việc </li>
+						<li>Columns: completed(Boolean):lưu trạng thái công việc đã làm hay chưa</li>
+					</ul>
+				</section>
+				<section>
+					<p>Tạo Bảng todo trong postgresql</p>
+					<pre>
+						<code class="hljs">
+CREATE TABLE public.todos
+(
+id integer NOT NULL DEFAULT nextval('todos_id_seq'::regclass),
+todo text NOT NULL,
+completed boolean DEFAULT false,
+CONSTRAINT todos_pkey PRIMARY KEY (id)
+)
+ALTER TABLE public.todos
+OWNER TO postgres;
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h6>Bước 2:(thiết kế views- front end)Code trang html tĩnh demo giao diện ững dụng</h6>
+					<img src="Images/Selection_009.png">
+
+				</section>
+				<section>
+					<h6>Bước 3: Xây dựng môi trường </h6>
+					<ul>
+						<li>
+							Tạo project Nodejs Express App
+						</li>
+						<li>
+							Cài đặt các module cần thiết: express,nunjucks,pg
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>cấu trúc mã nguồn ứng dụng</p>
+					<img src="Images/Selection_002.png">
+				</section>
+				<section>
+					<h6>Khai báo Nunjucks Views Engine</h6>
+					<ul>
+						<li>Nunjucks:  </li>
+						<li> Khai báo nunjucks trong "app.js"
+							<pre>
+						<code class="hljs">
+var nunjucks=require('nunjucks');
+//khai báo nunjucks
+// cấu hình views nunjucks
+var env=nunjucks.configure(app.get('views'),{
+  autoescape:true,
+    express:app
+})
+app.set('view engine','html');
+// set view engine dạng html
+						</code>
+							</pre>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h6>cấu trúc view engine Nunjucks đơn giản</h6>
+					<pre>
+						<code class="hljs">
+	{% block content %}
+	<ul>
+	  {% for name, item in items %}
+	  <li>{{ name }}: {{ item }}</li>
+	  {% endfor %}
+	</ul>
+	{% endblock %}
+					</code>
+				</pre>
+				</section>
+				<section>
+					<h6>Convert trang views demo html sang cấu trúc nunjucks</h6>
+					<pre>
+						<code class="hljs">
+{% block content %}
+  {% for item in data %}// su dung for duyệt dữ liệu trả về
+		{% if item.completed %}// nếu trạng thái completed=true => render
+            <li class="list-group-item list-group-item-info">{{ item.todo }}
+                <div class="btn-group-sm pull-right">
+                    <a id="{{ item.id }}" class="btn btn-default" href="/delete/{{ item.id }}"><span class="pull-right glyphicon glyphicon-remove"></span></a>
+                </div>
+            </li>
+		{% else %}
+            <li class="list-group-item" >{{ item.todo }}
+                <div class="btn-group-sm pull-right">
+                    <a class="btn btn-default" href="/done/{{ item.id }}"><span class="pull-right glyphicon glyphicon-ok"></span></a>
+                    <a class="btn btn-default" onclick="edit(this)" id="{{ item.id }}"><span class="pull-right glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-default" href="/delete/{{ item.id }}"><span class="pull-right glyphicon glyphicon-remove"></span></a>
+                </div>
+            </li>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+					</code>
+				</pre>
+				</section>
+				<section>
+					<h6>Bước 3:Kết nối cơ sở dữ liệu Postgresql </h6>
+					<ul>
+						<li>Khai báo router "/api" trong file app.js
+						<pre>
+						<code class="hljs">
+var api= require('./routes/api');
+app.use('/',api);
+						</code>
+					</pre>
+						</li>
+						<li>
+							Xây dựng router "api.js"
+						<pre>
+						<code class="hljs">
+// khai báo router
+var express = require('express');
+var router = express.Router();
+......
+module.exports = router;
+						</code>
+						</pre>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h6>Xây dựng router "api.js"</h6>
+							Khai báo Module pg (pg là module trong nodejs giúp hỗ trỡ kết nối tới cơ sở dữ liệu postgresql);
+							<pre>
+						<code class="hljs">
+const pg= require('pg'); // khai báo module pg
+const conString='postgres://postgres:123456@localhost:5432/todo';
+// khai báo đường dẫn kết nối CSDL
+						</code>
+						</pre>
+				</section>
+				<section>
+					<h6>Tạo router GET: lấy ra tất cả dữ liệu bảng todo</h6>
+					<pre>
+						<code class="hljs">
+router.get('/todo',function (req,res) {
+    pg.connect(conString,function (err,client,done) {
+        if (err){
+            res.end('Error when connect database!')
+            return;
+        }
+        client.query('SELECT * from todos',function (err,result) {
+	// select * from todos => trả về toàn bộ dữ liệu bảng todos
+            done();
+            if(err){
+                res.end('err when querysting');
+                return;
+            }
+            // console.log(result);
+            res.render('index', {data:result.rows});
+	//nunjucks bắt dữ liệu trả về data= result.rows
+	//truyền vào views template index.html và render template index.html
+            // res.json(result);
+        })
+    });
+});
+						</code>
+						</pre>
+				</section>
+				<section>
+					<h6>Tạo router get hoàn thành công việc</h6>
+					<pre>
+						<code class="hljs">
+router.get('/done/:id',function (req,res) {
+    pg.connect(conString,function (err,client,done) {
+        if (err){
+            res.end('Error when connect database!')
+            return;
+        }
+       // console.log(req.params.id);
+        client.query('update todos set completed=true where id=($1)',[req.params.id],function (err,result) {
+            done();
+            if(err){
+                res.end('err when querysting');
+                return;
+            }
+            res.redirect('/todo');
+		// res.redirect load lại trang /todo sau khi cập nhập csdl;
+        })
+    });
+});
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h6> Công việc "to do 8" chưa hoàn thành</h6>
+					<img src="Images/Selection_005.png">
+					<h6> Công việc "to do 8" sau khi tích hoàn thành</h6>
+					<img src="Images/Selection_006.png">
+
+				</section>
+				<section>
+					<h6>Tạo router post chỉnh sửa một công việc</h6>
+					<pre>
+						<code class="hljs">
+router.post('/edit/:id',function (req,res) {
+    pg.connect(conString,function (err,client,done) {
+        if (err){
+            res.end('Error when connect database!');
+            return;
+        }
+        var oldtodo;
+        client.query('select todo from todos where id=$1',[req.params.id],function (err,result) {
+            done();
+            if(err){
+                res.end('err when querysting');
+                return;
+            }
+            oldtodo=result.rows;
+            var changeTodo=req.body.todoedit;
+            if (changeTodo=="" || changeTodo==oldtodo){
+                res.redirect('/todo');
+            }else{
+                client.query('update todos set todo=$1 where id=$2;',[req.body.todoedit,req.params.id],function  (err,result) {
+                    done();
+                    if(err){
+                        res.end('err when querysting');
+                        return;
+                    }
+                    res.redirect('/todo');
+                });
+            }
+        });
+    });
+});
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h6>Giao diện chỉnh sửa một công việc</h6>
+					<img src="Images/Selection_003.png">
+				</section>
+				<section>
+					<h6>Tạo router.get xóa một công việc</h6>
+					<pre>
+						<code class="hljs">
+router.get('/delete/:id',function (req,res) {
+    pg.connect(conString,function (err,client,done) {
+        if (err){
+            res.end('Error when connect database!')
+            return;
+        }
+        console.log(req.params.id);
+        client.query('delete from todos where id=($1)',[req.params.id],function (err,result) {
+            done();
+            if(err){
+                res.end('err when querysting');
+                return;
+            }
+            // console.log(result);
+            res.redirect('/todo');
+
+            // res.json(result);
+        })
+    });
+});
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>Công việc "to do 7" khi chưa xóa</p>
+					<img src="Images/Selection_006.png">
+					<p>"to do 7" sau khi bị xóa-danh sách công việc cập nhập </p>
+					<img src="Images/Selection_008.png">
+				</section>
+				<section>
+					<h6>Tạo router.post tìm kiếm công việc</h6>
+					<pre>
+						<code class="hljs">
+router.post('/search',function (req,res) {
+    pg.connect(conString,function (err,client,done) {
+        if (err){
+            res.end('Error when connect database!');
+            return;
+        }
+        var str=req.body.searchtodo;
+        console.log(str);
+        console.log(req.params.id);
+        if (str==""){
+            res.redirect('/todo');
+        }else{
+            client.query('select todo from todos where todo like $1;',['%'+req.body.searchtodo+'%'],function  (err,result) {
+                done();
+                if(err){
+                    res.end('err when querysting');
+                    return;
+                }
+                // res.end('done');
+                res.render('index', {data:result.rows});
+            });
+        }
+    });
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h6>Giao diện tìm kiếm công việc</h6>
+					<p>tìm kiếm công việc với thừ khóa "lap trinh"</p>
+					<img src="Images/Selection_007.png">
+				</section>
+				<section>
+					<h6>Tổng Kết</h6>
+					<ul>
+						<li>Xây dựng CSDL bằng postgresql, công cụ pgAdmin</li>
+						<li>Biết được cách tạo ứng dụng express app trong Nodejs</li>
+						<li>Xử lý các router trong express app</li>
+						<li>Nắm băt Nunjucks template engine</li>
+						<li>link tham khảo mã nguồn:https://github.com/thuynv06/todo </li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
